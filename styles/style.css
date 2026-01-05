@@ -1,0 +1,627 @@
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      PÁGINA 1        */
+
+#pagina1 {
+    width: 600px;
+    height: 95vh;
+    background-color: #e0c282;
+    margin: 2% auto;
+}
+
+#img1 {
+    width: 100%;
+    padding: 4% 0;
+}
+
+.botao {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    margin: auto;
+}
+
+.img-botao {
+    width: 85%;
+}
+
+#start {
+    background: rgb(182, 114, 13);
+    width: 200px;
+    height: 70px;
+    font-size: 40px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    bottom: 4%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      VELHO TESTAMENTO      */
+#velho-testamento {
+    width: 600px;
+    height: 95vh;
+    background-color: #e0c282;
+    margin: 2% auto;
+    padding-bottom: 2%;
+    display: none;
+    position: relative;
+}
+
+#img-vt {
+    width: 80%;
+    height: 97%;
+    padding-top: 2%;
+    margin: 0 auto;
+}
+
+#retornarvt {
+    background: rgb(182, 114, 13);
+    width: 180px;
+    height: 60px;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: relative;
+    bottom: 40%;
+    margin: auto;
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      NOVO TESTAMENTO      */
+#novo-testamento {
+    width: 600px;
+    height: 95vh;
+    background-color: #e0c282;
+    margin: 2% auto;
+    padding-bottom: 2%;
+    display: none;
+    position: relative;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 91% 9%;
+}
+
+#img-nt {
+    width: 80%;
+    height: 97%;
+    padding-top: 2%;
+    margin: 0 auto;
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+#retornarnt {
+    background: rgb(182, 114, 13);
+    width: 180px;
+    height: 60px;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    grid-area: 2 / 1 / span 1 / span 1;
+    right: 10%;
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      APOCRIFOS      */
+#apocrifos {
+    width: 600px;
+    height: 95vh;
+    background-color: #e0c282;
+    margin: 2% auto;
+    padding-bottom: 2%;
+    display: none;
+    position: relative;
+    grid-template-columns: 50% 50%;
+    grid-template-rows: 91% 9%;
+}
+
+#img-ap {
+    width: 80%;
+    height: 97%;
+    padding-top: 2%;
+    margin: 0 auto;
+    grid-area: 1 / 1 / span 1 / span 2;
+}
+
+#retornarap {
+    background: rgb(182, 114, 13);
+    width: 180px;
+    height: 60px;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: absolute;
+    grid-area: 2 / 1 / span 1 / span 1;
+    right: 10%;
+}
+
+.link-saiba-mais {
+    background: rgb(182, 114, 13);
+    width: 180px;
+    height: 60px;
+    font-size: 30px;
+    text-align: center;
+    color: #000;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    grid-area: 2 / 2 / span 1 / span 1;
+    position: relative;
+    left: 10%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+a:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    -moz-transform: scale(1.1, 1.3);
+    -webkit-transform: scale(1.1, 1.3);
+    transform: scale(1.3);
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      PÁGINA 2        */
+#pagina2 {
+    width: 600px;
+    height: 95vh;
+    background-color: #e0c282;
+    margin: 2% auto;
+    display: none;
+    position: relative;
+    grid-template-columns: 25% 25% 33% 17%;
+    grid-template-rows: auto 275px auto 130px 70px auto 200px;
+}
+
+#obs2 {
+    padding: 1% 4%;
+    font-family: "Palatino Linotype";
+    color: rgb(18, 18, 18);
+    font-style: oblique;
+    font-size: 18px;
+    line-height: 1.3rem;
+    text-align: justify;
+    margin-top: auto;
+    margin-bottom: auto;
+    grid-area: 1 / 1 / span 1 / span 3;
+}
+
+#Marcatempo {
+    grid-area: 1 / 4 / span 1 / span 1;
+    background-color: rgb(182, 114, 13);
+    margin: 5% 20% 5% 0;
+    padding: 4%;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 4px black;
+}
+
+h5 {
+    font-family: "Palatino Linotype";
+    color: rgb(18, 18, 18);
+    font-size: 10px;
+}
+
+h2 {
+    font-family: Impact, Arial;
+    color: rgb(18, 18, 18);
+    font-size: 25px;
+    padding-top: 5px;
+    text-align: center;
+}
+
+#livros-da-biblia {
+    grid-area: 2 / 1 / span 1 / span 4;
+    position: static;
+    /*o "elemento pai", no caso "livros-da-biblia" precisa está com position: static para que o position: absolute do "elemento filho, no caso "livroaberto" funcione*/
+    margin: 0 auto;
+    width: 480px;
+    height: auto;
+    border: solid 1px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+}
+
+#livro {
+    width: 480px;
+    position: absolute;
+    z-index: 2;
+}
+
+.livroaberto {
+    width: 480px;
+    position: absolute;
+    /*o "elemento pai", no caso "livros-da-biblia" e também o "elemento irmão" que vem antes, (no caso "livro fechado") precisam está com position: static para que funcione*/
+}
+
+#obs3 {
+    grid-area: 3 / 1 / span 1 / span 3;
+    font-family: "Palatino Linotype";
+    color: rgb(18, 18, 18);
+    font-style: oblique;
+    font-size: 18px;
+    line-height: 1.3rem;
+    padding: 2% 4%;
+}
+
+#Marcapontuacao {
+    grid-area: 3 / 4 / span 1 / span 1;
+    background-color: rgb(182, 114, 13);
+    margin: 7% 20% 7% 0;
+    padding: 2%;
+    text-align: center;
+    border-radius: 8px;
+    border: solid 4px black;
+}
+
+#nome-do-livroautocomplete-list div {
+    background-color: white;
+    border: 1px black solid;
+    font: normal 13pt Impact, Arial;
+    color: rgb(18, 18, 18);
+    margin: 1% auto;
+    text-align: center;
+    /* para deixar p texto horizontalmente centralizado*/
+    border: solid 3px rgb(18, 18, 18);
+    text-transform: uppercase;
+    /*para deixar o texto sempre em maiúsculo*/
+}
+
+#nome-do-livroautocomplete-list div:hover {
+    background-color: rgb(248, 227, 108);
+    cursor: pointer;
+    font: normal 13pt "Swis721 BlkEx BT", Arial;
+    color: rgb(18, 18, 18);
+    margin: 1% auto;
+    text-align: center;
+    /* para deixar p texto horizontalmente centralizado*/
+    border: solid 3px rgb(18, 18, 18);
+    text-transform: uppercase;
+    /*para deixar o texto sempre em maiúsculo*/
+}
+
+#nome-do-livroautocomplete-list div.desabilitado {
+    background-color: #ceb379;
+    border-style: none;
+    font: normal 13pt "Swis721 BdCnOul Bt", Impact, Arial;
+    color: rgba(255, 255, 255, 0.5);
+    margin: 1% auto;
+    text-align: center;
+    /* para deixar p texto horizontalmente centralizado*/
+    text-transform: uppercase;
+    /*para deixar o texto sempre em maiúsculo*/
+    cursor: none;
+}
+
+#nome-autocomplete {
+    grid-area: 5 / 1 / span 1 / span 2;
+    margin: auto;
+    z-index: 2;
+}
+
+#nome-do-livro {
+    background-image: url("/imagens/input.jpg");
+    background-size: cover;
+    font: normal 16pt Impact, Arial;
+    color: rgb(18, 18, 18);
+    width: 240px;
+    height: 55px;
+    margin: 4% auto;
+    text-align: center;
+    /* para deixar p texto horizontalmente centralizado*/
+    padding-top: 15px;
+    border: solid 4px rgb(18, 18, 18);
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    text-transform: uppercase;
+    /*para deixar o texto sempre em maiúsculo*/
+}
+
+#seta1 {
+    grid-area: 5 / 3 / span 1 / span 1;
+    width: 50px;
+    height: 50px;
+    margin: auto -12%;
+}
+
+#despenser-livros {
+    grid-area: 5 / 3 / span 1 / span 2;
+    border: solid 1px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    width: 160px;
+    height: 55px;
+    margin: auto 12%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#sair-salvar {
+    grid-area: 5 / 4 / span 1 / span 1;
+    background: rgb(182, 114, 13);
+    width: 80px;
+    height: 60px;
+    font-size: 28px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    position: relative;
+    margin: auto 0 auto 12%;
+    display: none;
+}
+
+.draggable {
+    width: 55px;
+    height: 160px;
+    position: absolute;
+    transform: rotate(90deg);
+}
+
+.draggable:hover {
+    /*droppable-hover = tranformação da cx de receber elemento quando o mouse passa por ela*/
+    border-width: 2px;
+    transform: scale(1.2);
+    cursor: move;
+    /*muda o tipo do cursor - neste caso para mover o elemento*/
+}
+
+#botao-despenser-dicas {
+    grid-area: 4 / 1 / span 1 / span 2;
+    background-image: url("/imagens/dica.png");
+    background-size: contain;
+    background-color: #e0c282;
+    width: 150px;
+    height: 90px;
+    margin: auto;
+}
+
+#seta2 {
+    grid-area: 4 / 3 / span 1 / span 1;
+    width: 50px;
+    height: 50px;
+    margin: auto -12%;
+}
+
+#container-dicas {
+    grid-area: 4 / 3 / span 1 / span 2;
+    position: relative;
+    border: solid 1px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    width: 200px;
+    height: 120px;
+    margin: auto 12%;
+}
+
+.dica {
+    width: 100%;
+    display: none;
+}
+
+#obs4 {
+    grid-area: 6 / 1 / span 1 / span 4;
+    font-family: "Palatino Linotype";
+    color: rgb(18, 18, 18);
+    font-style: oblique;
+    font-size: 18px;
+    line-height: 1.3rem;
+    padding: 1% 4%;
+}
+
+.caixa-dropped {
+    border: solid 1px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    margin: 5%;
+}
+
+.caixa-dropped-escolha {
+    border: solid 1px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    margin: 5%;
+    background-color: rgb(182, 114, 13);
+}
+
+.caixa-dropped-hover {
+    border: solid 3px #30250b;
+    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    margin: 5%;
+    background-color: rgb(125, 75, 0);
+    transform: scale(1.1);
+}
+
+#at {
+    grid-area: 7 / 1 / span 1 / span 2;
+}
+
+#nt {
+    grid-area: 7 / 3 / span 1 / span 2;
+}
+
+#img-cx-nt {
+    width: 100%;
+}
+
+#img-cx-at {
+    width: 100%;
+}
+
+#modal-erro {
+    display: none;
+}
+
+#modal-acerto {
+    display: none;
+}
+
+#modal-acerto:checked~.modal-certo {
+    display: block;
+}
+
+#modal-erro:checked~.modal-errado {
+    display: block;
+}
+
+.modal-certo {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+.modal-errado {
+    display: none;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 9999;
+}
+
+#dica-bonus {
+    width: 50vw;
+    height: 60vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    z-index: -20;
+}
+
+.dica-extra {
+    position: absolute;
+    top: 25%;
+    left: 46%;
+    font-size: 30px;
+    font-family: 'Swis721 BlkEx BT', 'Charlesworth', 'Arial Narrow', Arial, sans-serif;
+}
+
+#mensagem-final {
+    display: none;
+    position: fixed;
+    top: 19px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 10;
+    background-color: #e0c282;
+    width: 600px;
+    height: 900px;
+}
+
+#img-mensagem-final {
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+}
+
+#pontuacao-final {
+    background: rgb(182, 114, 13);
+    padding: 1%;
+    width: 160px;
+    height: 70px;
+    position: relative;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    left: 15%;
+    top: 30%;
+}
+
+#tempo-final {
+    background: rgb(182, 114, 13);
+    padding: 1%;
+    width: 160px;
+    height: 70px;
+    position: absolute;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    border-radius: 8px;
+    border: outset 5px rgb(252, 237, 177);
+    left: 58%;
+    top: 30%;
+}
+
+#proxima-fase {
+    background: rgb(182, 114, 13);
+    width: 210px;
+    height: 70px;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #000;
+    border: outset 5px rgb(252, 237, 177);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 10%;
+    top: 20%;
+}
+
+#proxima-fase:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    -moz-transform: scale(1.1, 1.2);
+    -webkit-transform: scale(1.1, 1.2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#sair-jogo-finalizado {
+    background: rgb(182, 114, 13);
+    width: 210px;
+    height: 70px;
+    font-size: 30px;
+    font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    color: #000;
+    border: outset 5px rgb(252, 237, 177);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    left: 54%;
+    top: 20%;
+}
+
+#sair-jogo-finalizado:hover {
+    -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
+    -moz-transform: scale(1.1, 1.2);
+    -webkit-transform: scale(1.1, 1.2);
+    transform: scale(1.2);
+    cursor: pointer;
+}
+
+#pontuacao-para-salvar {
+    display: none;
+}
+
+#dados-salvos-json {
+    display: none;
+}
+
+#numeros-de-livros-salvos {
+    display: none;
+}
+
+#nome-livro {
+    display: none;
+}

@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Bíblia</title>
+    <link rel="stylesheet" type="text/css" href="/styles/style.css" />
+</head>
+
+<body>
+    <!-- X-X-X-X-X-X-X-X PÁGINA 1 -X-X-X-X-X-X-X-X-X -->
+    <div id="pagina1">
+        <img alt="livros da biblia" id="img1" src="\imagens\biblia.png">
+        <button type="button" class="botao" onclick="clicarVT()">
+            <img class="img-botao" src="/imagens/velho-testamento1.png"></button>
+        <button type="button" class="botao" onclick="clicarNT()">
+            <img class="img-botao" src="/imagens/novo-testamento1.png"></button>
+        <button type="button" class="botao" onclick="clicarAP()">
+            <img class="img-botao" src="/imagens/apocrifos1.png"></button>
+        <button type="button" id="start" onclick="clicarStart()">START</button>
+    </div>
+    <!-- X-X-X-X-X-X-X-X- velho-testamento -X-X-X-X-X-X-X-X-X -->
+    <div id="velho-testamento">
+        <img id="img-vt" src="/imagens/velho-testamento2.png">
+        <button type="button"id="retornarvt" onclick="clicarRetornar()">RETORNAR</button>
+    </div>
+    <!-- X-X-X-X-X-X-X-X- novo-testamento -X-X-X-X-X-X-X-X-X -->
+    <div id="novo-testamento">
+        <img id="img-nt" src="/imagens/novo-testamento2.png">
+        <button type="button" id="retornarnt" onclick="clicarRetornar()">RETORNAR</button>
+        <a class="link-saiba-mais" href="https://youtube.com/watch?v=AQi6htE63ps” 
+        " target="_bank" data-passage="Next Passage">SAIBA MAIS</a>
+    </div>
+    <!-- X-X-X-X-X-X-X-X- apocrifos -X-X-X-X-X-X-X-X-X -->
+    <div id="apocrifos">
+        <img id="img-ap" src="/imagens/apocrifos2.png">
+        <button type = "button" id="retornarap" onclick="clicarRetornar()">RETORNAR</button>
+        <a class="link-saiba-mais" href="https://youtube.com/watch?v=IHy_VB_ohJE” 
+        " target="_bank" data-passage="Next Passage">SAIBA MAIS</a>
+    </div>
+    <!-- X-X-X-X-X-X-X-X PÁGINA 2 -X-X-X-X-X-X-X-X-X -->
+    <div id="pagina2">
+        <div id="obs2">
+            A figura abaixo representa um dos livros da Bíblia.<br>
+            Clique na figura e leia o versículo nele contido.<br>
+            Você sabe em que livro da Bíblia está escrito esse versículo?
+        </div>
+        <div id="Marcatempo">
+            <h5>TEMPO:</h5>
+            <h2 id="cronometro">00:00</h2>
+        </div>
+        <div id="livros-da-biblia">
+            <p id="nome-livro"></p>"
+            <img id="livro" src="/imagens/livrofechado.jpg" onclick="passaAVez()">
+        </div>
+        <div id="obs3">
+            Escreva no espaço abaixo o nome do livro: Se você ainda não sabe,
+            clique em "Dica" e eu vou te dar uma pista! Se mesmo assim continua
+            difícil, clique no livro acima para passar a vez.
+        </div>
+        <div id="Marcapontuacao">
+            <h5>PONTOS:</h5>
+            <h2 id="indicador">00</h2>
+        </div>
+        <button type="button" id="botao-despenser-dicas"></button>
+        <img id="seta2" src="/imagens/icone-seta.png">
+        <div id="container-dicas">
+            <img class="dica" id="dica" src="">
+        </div>
+        <div id="nome-autocomplete">
+            <input type="text" id="nome-do-livro" maxlength="18"/>
+        </div>
+        <img id="seta1" src="/imagens/icone-seta.png">
+        <div id="despenser-livros">
+        </div>
+        <button type="button" id="sair-salvar" onclick="clicarSair()">SAIR</button>
+        <div id="obs4">
+            Em que parte da Bíblia fica esse livro? Clique na imagem do livro acima,
+            arraste-a e solte-a na área correspondente (Velho ou Novo Testamento).
+        </div>
+        <div class="caixa-dropped" id="at">
+            <img id="img-cx-at" src="/imagens/velho-testamento.png">
+        </div>
+        <div class="caixa-dropped" id="nt">
+            <img id="img-cx-nt" src="/imagens/novo-testamento.png">
+        </div>
+        <!--ABAIXO MENSAGENS TEMPORÁRIAS-->
+        <div id="dica-bonus"></div>
+
+        <input placeholder="risi" type="checkbox" id="modal-erro">
+        <div class="modal-errado">
+            <img src="imagens\mensagem-de-erro.png" id="mensagem-de-erro">
+        </div>
+        <input placeholder="risi" type="checkbox" id="modal-acerto">
+        <div class="modal-certo">
+            <img src="imagens\mensagem-de-acerto.png" id="mensagem-de-acerto">
+        </div>
+        <div id="mensagem-final">
+            <img id="img-mensagem-final" src="imagens\mensagem-final.png">
+            <div id="pontuacao-final">
+                <h5>SUA PONTUAÇÃO FINAL:</h5>
+                <h2 id="mostra-pontuacao-final">0000</h2>
+            </div>
+            <div id="tempo-final">
+                <h5>DURAÇÃO DE TEMPO:</h5>
+                <h2 id="mostra-tempo-final">00:00</h2>
+            </div>
+            <button type="button" id="sair-jogo-finalizado">SAIR</button>
+            <button type="button" id="proxima-fase">PRÓXIMA FASE</button>
+            <!-- <a href="2fase.html" rel="next" ></a> -->
+        </div>
+    </div>
+    <p id="pontuacao-para-salvar"></p>
+    <p id="dados-salvos-json"></p>
+    <p id="numeros-de-livros-salvos"></p>
+    <script src="scripts/GerenciadorDeSave.js" defer></script>
+    <script src="scripts/cronometro.js" defer></script>
+    <script src="scripts/pontuacao.js" defer></script>
+    <script src="scripts/BotaoSair.js" defer></script>
+    <script src="scripts/JogoFinalizado.js" defer></script>
+    <script src="scripts/GerenciadorDeErros.js" defer></script>
+    <script src="scripts/GerenciadorDosLivros.js" defer></script>
+    <script src="scripts/LivroDaBiblia.js" defer></script>
+    <script src="scripts/index.js" defer></script>
+</body>
+
+</html>
