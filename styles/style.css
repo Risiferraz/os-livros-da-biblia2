@@ -6,19 +6,38 @@
     box-sizing: border-box;
 }
 
+body {
+    background-color: #c4a15a;
+    /* overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center; */
+}
+
 /* -----------------------------------------------------------------------------*/
 /*      PÁGINA 1        */
 
 #pagina1 {
-    width: 600px;
-    height: 95vh;
+    width: 520px;
+    aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
     margin: 2% auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 3%;
+    padding-top: 2%;
+    position: relative;
 }
 
 #img1 {
     width: 100%;
-    padding: 4% 0;
+    height: auto;
+    max-height: 40%;
+    object-fit: contain;
+    flex-shrink: 0;
 }
 
 .botao {
@@ -26,25 +45,33 @@
     border: none;
     cursor: pointer;
     overflow: hidden;
-    margin: auto;
+    margin: 0 auto;
+    height: 12%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .img-botao {
     width: 85%;
+    height: auto;
 }
 
 #start {
     background: rgb(182, 114, 13);
-    width: 200px;
-    height: 70px;
-    font-size: 40px;
+    width: 15vw;
+    height: 6vh;
+    max-width: 200px;
+    max-height: 70px;
+    font-size: clamp(20px, 4vw, 35px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
     position: absolute;
-    bottom: 4%;
+    bottom: 3%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translateX(-50%);
+    flex-shrink: 0;
 }
 
 /* -----------------------------------------------------------------------------*/
@@ -178,18 +205,18 @@ a:hover {
 /* -----------------------------------------------------------------------------*/
 /*      PÁGINA 2        */
 #pagina2 {
-    width: 600px;
-    height: 95vh;
+    width: 520px;
+    aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
     margin: 2% auto;
     display: none;
     position: relative;
-    grid-template-columns: 25% 25% 33% 17%;
-    grid-template-rows: auto 275px auto 130px 70px auto 200px;
+    grid-template-columns: 30% 20% 32% 18%;
+    grid-template-rows:  11% 37% 11% 15% 10% auto auto;
 }
 
 #obs2 {
-    padding: 1% 4%;
+    padding: 1% 1% 0 4%;
     font-family: "Palatino Linotype";
     color: rgb(18, 18, 18);
     font-style: oblique;
@@ -204,7 +231,8 @@ a:hover {
 #Marcatempo {
     grid-area: 1 / 4 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
-    margin: 5% 20% 5% 0;
+    width: 85px;
+    margin: 7% 0;
     padding: 4%;
     text-align: center;
     border-radius: 8px;
@@ -227,25 +255,18 @@ h2 {
 
 #livros-da-biblia {
     grid-area: 2 / 1 / span 1 / span 4;
-    position: static;
-    /*o "elemento pai", no caso "livros-da-biblia" precisa está com position: static para que o position: absolute do "elemento filho, no caso "livroaberto" funcione*/
-    margin: 0 auto;
-    width: 480px;
-    height: auto;
-    border: solid 1px #30250b;
-    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
+    width: 100%;
 }
 
 #livro {
-    width: 480px;
-    position: absolute;
-    z-index: 2;
+    width: 100%;
+    height: 100%;
 }
 
 .livroaberto {
-    width: 480px;
+    width: 100%;
+    max-width: 100%;
     position: absolute;
-    /*o "elemento pai", no caso "livros-da-biblia" e também o "elemento irmão" que vem antes, (no caso "livro fechado") precisam está com position: static para que funcione*/
 }
 
 #obs3 {
@@ -255,17 +276,29 @@ h2 {
     font-style: oblique;
     font-size: 18px;
     line-height: 1.3rem;
-    padding: 2% 4%;
+    padding: 2% 1% 0 4%;
 }
 
 #Marcapontuacao {
     grid-area: 3 / 4 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
-    margin: 7% 20% 7% 0;
-    padding: 2%;
+    width: 85px;
+    margin: 7% 0;
+    padding: 4%;
     text-align: center;
     border-radius: 8px;
     border: solid 4px black;
+}
+
+#botao-despenser-dicas {
+    grid-area: 4 / 1 / span 1 / span 1;
+    background-image: url("/imagens/dica.png");
+    background-size: contain;
+    background-color: #e0c282;
+    background-repeat: no-repeat;
+    border: transparent;
+    width: 100%;
+    margin: 1% 0 1% 20%;
 }
 
 #nome-do-livroautocomplete-list div {
@@ -309,8 +342,7 @@ h2 {
 
 #nome-autocomplete {
     grid-area: 5 / 1 / span 1 / span 2;
-    margin: auto;
-    z-index: 2;
+    margin: 0 5%;
 }
 
 #nome-do-livro {
@@ -318,17 +350,14 @@ h2 {
     background-size: cover;
     font: normal 16pt Impact, Arial;
     color: rgb(18, 18, 18);
-    width: 240px;
-    height: 55px;
-    margin: 4% auto;
+    width: 95%;
+    margin: 3% auto;
+    padding: 7% 2% 3% 2%;
     text-align: center;
-    /* para deixar p texto horizontalmente centralizado*/
-    padding-top: 15px;
     border: solid 4px rgb(18, 18, 18);
     border-radius: 4px;
     box-shadow: 1px 1px 2px #333333;
     text-transform: uppercase;
-    /*para deixar o texto sempre em maiúsculo*/
 }
 
 #seta1 {
@@ -380,21 +409,11 @@ h2 {
     /*muda o tipo do cursor - neste caso para mover o elemento*/
 }
 
-#botao-despenser-dicas {
-    grid-area: 4 / 1 / span 1 / span 2;
-    background-image: url("/imagens/dica.png");
-    background-size: contain;
-    background-color: #e0c282;
-    width: 150px;
-    height: 90px;
-    margin: auto;
-}
-
 #seta2 {
-    grid-area: 4 / 3 / span 1 / span 1;
+    grid-area: 4 / 2 / span 1 / span 1;
     width: 50px;
     height: 50px;
-    margin: auto -12%;
+    margin: auto 38%;
 }
 
 #container-dicas {
@@ -402,9 +421,9 @@ h2 {
     position: relative;
     border: solid 1px #30250b;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    width: 200px;
-    height: 120px;
-    margin: auto 12%;
+    width: 70%;
+    height: 90%;
+    margin-left: 5%;
 }
 
 .dica {
@@ -522,8 +541,10 @@ h2 {
     margin: auto;
     z-index: 10;
     background-color: #e0c282;
-    width: 600px;
-    height: 900px;
+    width: 90%;
+    max-width: 600px;
+    height: auto;
+    padding-bottom: 2%;
 }
 
 #img-mensagem-final {

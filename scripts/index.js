@@ -140,7 +140,13 @@ document.getElementById("botao-despenser-dicas")
   .addEventListener("click", () => {
     document.getElementById("dica").style.display = "block"
     pontuacao.usandoDica()
+    const container = document.getElementById("container-dicas")
+    if (container) {
+      container.style.border = "none"
+      container.style.boxShadow = "none"
+    }
   })
+
 let livroCorreto = null
 setInterval(() => {
   cronometro.atualizaCronometro()
@@ -412,6 +418,11 @@ function realizaAcoesDeAcerto() {
   setTimeout(() => {
     document.getElementById("modal-acerto").checked = false
     gerenciadorDosLivros.habilitaLivroSorteado()
+    const container = document.getElementById("container-dicas")
+    if (container) {
+      container.style.border = "solid 1px #30250b"
+      container.style.boxShadow = "rgba(0, 0, 0, 0.8) 5px 5px"
+    }
   }, 2500)
 }
 
@@ -432,6 +443,12 @@ function realizaAcoesDeFimDeJogo() {
 }
 
 function passaAVez() {
+  if (!livroCorreto) return
   livroCorreto.fechaABiblia()
   gerenciadorDosLivros.habilitaLivroSorteado()
+  const container = document.getElementById("container-dicas")
+  if (container) {
+    container.style.border = "solid 1px #30250b"
+    container.style.boxShadow = "rgba(0, 0, 0, 0.8) 5px 5px"
+  }
 }
