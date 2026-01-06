@@ -133,6 +133,12 @@ livro.addEventListener("click", () => {
   if(gerenciadorDosLivros.verificaSeEstaHabilitado()) {
     sorteiaLivroDaVez()
     gerenciadorDosLivros.bloqueiaLivroSorteado()
+    // Habilita o input quando o livro é clicado
+    const inputNomeDoLivro = document.getElementById("nome-do-livro")
+    if (inputNomeDoLivro) {
+      inputNomeDoLivro.disabled = false
+      inputNomeDoLivro.focus()
+    }
   }
 })
 
@@ -154,6 +160,7 @@ setInterval(() => {
 const inputDeResposta = document.getElementById('nome-do-livro')
 const TEMPO_PARA_APARECER_ERRADO = 2000
 inputDeResposta.value = ""
+inputDeResposta.disabled = true // Garante que o input inicia desabilitado
 function sorteiaLivroDaVez() {
   console.log("Lista de números já sorteados: ", listaDeNumerosAleatoriosJaSorteados)
   // const numeroAleatorio=59
@@ -170,6 +177,12 @@ function sorteiaLivroDaVez() {
     listaDeLivros[numeroAleatorio].mostraLivro()
     pontuacao.passandoParaNovoLivro()
     ultimoNumeroSorteado = numeroAleatorio
+    // Desabilita o input quando um novo livro é sorteado
+    const inputNomeDoLivro = document.getElementById("nome-do-livro")
+    if (inputNomeDoLivro) {
+      inputNomeDoLivro.disabled = true
+      inputNomeDoLivro.value = ""
+    }
     // listaDeNumerosAleatoriosJaSorteados.push(numeroAleatorio);
   }
 }
@@ -181,22 +194,21 @@ inputDeResposta.addEventListener('keyup', event => {
 })
 function verificaSeAcertou() {
   const resposta = inputDeResposta.value
+  const r = resposta.trim().toLowerCase()
+  console.log('verificaSeAcertou → raw:', JSON.stringify(resposta), 'normalized:', r)
   if (livroCorreto.isRespostaCerta(resposta)) {
     listaDeNumerosAleatoriosJaSorteados.push(ultimoNumeroSorteado);
-    document.getElementById("numeros-de-livros-salvos").textContent=listaDeNumerosAleatoriosJaSorteados.join(",")
-    inputDeResposta.style.color = "rgb(1, 21, 86)"//cor: azul marinho
+    document.getElementById("numeros-de-livros-salvos").textContent = listaDeNumerosAleatoriosJaSorteados.join(",")
+    inputDeResposta.style.color = "rgb(1, 21, 86)" // cor: azul marinho
     inputDeResposta.style.fontFamily = "Swis721 BlkEx BT"
-    if (resposta == "deuteronomio") {
-      inputDeResposta.style.fontSize = "17px"
-    } else if (resposta == "1tessalonicenses") {
-      inputDeResposta.style.fontSize = "15px"
-    } else if (resposta == "2tessalonicenses") {
-      inputDeResposta.style.fontSize = "15px"
-    } else if (resposta.length > 10) {
-      inputDeResposta.style.fontSize = "20px"
-    } else {
-      inputDeResposta.style.fontSize = "22px"
-    }
+    let fontSize
+    if (r === "deuteronomio") fontSize = "17px"
+    else if (r === "1tessalonicenses" || r === "2tessalonicenses") fontSize = "15px"
+    else if (resposta.trim().length > 10) fontSize = "19px"
+    else fontSize = "22px"
+    console.log('definindo font-size =', fontSize)
+    inputDeResposta.style.fontSize = fontSize
+    console.log('computed font-size =', getComputedStyle(inputDeResposta).fontSize)
     livroCorreto.mostraRespostaCorreta()
     // inputDeResposta.disabled = true (remover o comentário quando fizer a lógica de colocar o livro no testamento correto)
     pontuacao.adicionaPontuacaoCorreta()
@@ -207,7 +219,6 @@ function verificaSeAcertou() {
   }
   else {
     inputDeResposta.style.color = "#ff0000"//cor: vermelho
-    //TODO adeguar o tamanho da fonte
     const respostaErrada = inputDeResposta.value
     if (respostaErrada == "deuteronomio") {
       inputDeResposta.style.fontSize = "25px"
@@ -412,6 +423,7 @@ function realizaAcoesDeAcerto() {
   livroCorreto.fechaABiblia()
   dragged.style.display = "none"
   inputDeResposta.value = ""
+  inputDeResposta.disabled = true
   verificaFimDeJogo()
   // document.getElementById("mensagem-de-acerto").style.display = "block"
   document.getElementById("modal-acerto").checked = true
@@ -423,7 +435,7 @@ function realizaAcoesDeAcerto() {
       container.style.border = "solid 1px #30250b"
       container.style.boxShadow = "rgba(0, 0, 0, 0.8) 5px 5px"
     }
-  }, 2500)
+  }, 2000)
 }
 
 function verificaFimDeJogo() {
@@ -444,6 +456,12 @@ function realizaAcoesDeFimDeJogo() {
 
 function passaAVez() {
   if (!livroCorreto) return
+  // Habilita o input quando o livro é clicado
+  const inputNomeDoLivro = document.getElementById("nome-do-livro")
+  if (inputNomeDoLivro) {
+    inputNomeDoLivro.disabled = false
+    inputNomeDoLivro.focus()
+  }
   livroCorreto.fechaABiblia()
   gerenciadorDosLivros.habilitaLivroSorteado()
   const container = document.getElementById("container-dicas")
