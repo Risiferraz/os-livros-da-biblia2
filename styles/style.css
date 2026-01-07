@@ -208,6 +208,7 @@ a:hover {
 /*      PÁGINA 2        */
 #pagina2 {
     width: 95vw;
+    min-width: 520px;
     max-width: 570px;
     max-height: 97vh;
     aspect-ratio: 1 / 1.4;
@@ -505,41 +506,64 @@ h2 {
 }
 
 #modal-acerto:checked~.modal-certo {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 #modal-erro:checked~.modal-errado {
-    display: block;
+    opacity: 1;
+    visibility: visible;
 }
 
 .modal-certo {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 .modal-errado {
-    display: none;
+    opacity: 0;
+    visibility: hidden;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 9999;
+    transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
 }
 
 #dica-bonus {
-    width: 50vw;
-    height: 60vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     position: absolute;
-    top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    margin: auto;
     z-index: -20;
+}
+
+#dica-bonus.dica-letra {
+    background-image: url("/imagens/mensagem-nova-dica-letra.png");
+}
+
+#dica-bonus.dica-numero {
+    background-image: url("/imagens/mensagem-nova-dica-numero.png");
+}
+
+#dica-bonus::before {
+    content: attr(data-letra);
+    position: absolute;
+    top: 25%;
+    left: 46%;
+    font-size: 30px;
+    font-weight: bold;
+    font-family: 'Swis721 BlkEx BT', 'Charlesworth', 'Arial Narrow', Arial, sans-serif;
 }
 
 .dica-extra {
@@ -553,66 +577,96 @@ h2 {
 #mensagem-final {
     display: none;
     position: fixed;
-    top: 19px;
+    top: 0;
     left: 0;
     right: 0;
     margin: auto;
     z-index: 10;
     background-color: #e0c282;
-    width: 90%;
     max-width: 600px;
-    height: auto;
-    padding-bottom: 2%;
+    min-height: 80vh;
+    grid-template-rows: 18vh 9vh 9vh 64vh;
+    grid-template-columns: 1fr 1fr;
 }
 
 #img-mensagem-final {
     width: 100%;
-    position: absolute;
+    position: relative;
     bottom: 0;
+    grid-area: 1 / 1 / span 2 / span 4;
 }
 
 #pontuacao-final {
+    grid-area: 3 / 1 / span 1 / span 1;
     background: rgb(182, 114, 13);
-    padding: 1%;
-    width: 160px;
-    height: 70px;
-    position: relative;
-    font-size: 30px;
+    padding: clamp(6px, 3%, 20px);
+    width: clamp(100px, 90%, 200px);
+    height: auto;
+    min-height: clamp(50px, 8vh, 80px);
+    font-size: clamp(16px, 4vw, 28px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    left: 15%;
-    top: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#pontuacao-final h5 {
+    align-self: flex-start;
+    margin: 0;
+}
+
+#pontuacao-final h2 {
+    align-self: center;
+    margin: 0;
 }
 
 #tempo-final {
+    grid-area: 3 / 2 / span 1 / span 1;
     background: rgb(182, 114, 13);
-    padding: 1%;
-    width: 160px;
-    height: 70px;
-    position: absolute;
-    font-size: 30px;
+    padding: clamp(6px, 3%, 20px);
+    width: clamp(100px, 90%, 200px);
+    height: auto;
+    min-height: clamp(50px, 8vh, 80px);
+    font-size: clamp(16px, 4vw, 28px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    left: 58%;
-    top: 30%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+#tempo-final h5 {
+    align-self: flex-start;
+    margin: 0;
+}
+
+#tempo-final h2 {
+    align-self: center;
+    margin: 0;
 }
 
 #proxima-fase {
+    grid-area: 2 / 1 / span 1 / span 1;
     background: rgb(182, 114, 13);
-    width: 210px;
-    height: 70px;
-    font-size: 30px;
+    width: clamp(130px, 90%, 240px);
+    height: auto;
+    min-height: clamp(50px, 7vh, 75px);
+    padding: clamp(8px, 3%, 18px);
+    font-size: clamp(18px, 4.5vw, 32px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     color: #000;
     border: outset 5px rgb(252, 237, 177);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 10%;
-    top: 20%;
+    margin: auto;
 }
 
 #proxima-fase:hover {
@@ -625,19 +679,20 @@ h2 {
 }
 
 #sair-jogo-finalizado {
+    grid-area: 2 / 2 / span 1 / span 1;
     background: rgb(182, 114, 13);
-    width: 210px;
-    height: 70px;
-    font-size: 30px;
+    width: clamp(130px, 90%, 240px);
+    height: auto;
+    min-height: clamp(50px, 7vh, 75px);
+    padding: clamp(8px, 3%, 18px);
+    font-size: clamp(18px, 4.5vw, 32px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     color: #000;
     border: outset 5px rgb(252, 237, 177);
     display: flex;
     align-items: center;
     justify-content: center;
-    position: absolute;
-    left: 54%;
-    top: 20%;
+    margin: auto;
 }
 
 #sair-jogo-finalizado:hover {

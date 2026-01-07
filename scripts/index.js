@@ -425,7 +425,6 @@ function realizaAcoesDeAcerto() {
   inputDeResposta.value = ""
   inputDeResposta.disabled = true
   verificaFimDeJogo()
-  // document.getElementById("mensagem-de-acerto").style.display = "block"
   document.getElementById("modal-acerto").checked = true
   setTimeout(() => {
     document.getElementById("modal-acerto").checked = false
@@ -435,7 +434,7 @@ function realizaAcoesDeAcerto() {
       container.style.border = "solid 1px #30250b"
       container.style.boxShadow = "rgba(0, 0, 0, 0.8) 5px 5px"
     }
-  }, 2000)
+  }, 1000)
 }
 
 function verificaFimDeJogo() {
