@@ -25,21 +25,21 @@ body {
     max-height: 97vh;
     aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
-    margin: 2% auto;
-    display: flex;
-    flex-direction: column;
+    margin: 1vh auto;
+    padding: 2.5% 3%;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 42% 15% 13% 13% 1fr;
+    gap: 1.5%;
     align-items: center;
-    gap: 3%;
-    padding-top: 2%;
+    justify-items: center;
     position: relative;
 }
 
 #img1 {
     width: 100%;
-    height: auto;
-    max-height: 40%;
+    height: 100%;
     object-fit: contain;
-    flex-shrink: 0;
     border: transparent;
 }
 
@@ -48,8 +48,8 @@ body {
     border: none;
     cursor: pointer;
     overflow: hidden;
-    margin: 0 auto;
-    height: 12%;
+    width: 100%;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -62,36 +62,42 @@ body {
 
 #start {
     background: rgb(182, 114, 13);
-    width: 20vw;
-    height: 8vh;
+    width: 30%;
+    aspect-ratio: 3 / 1;
     max-width: 200px;
-    max-height: 70px;
-    font-size: clamp(23px, 4vw, 29px);
+    font-size: clamp(20px, 5vw, 37px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    position: absolute;
-    bottom: 3%;
-    left: 50%;
-    transform: translateX(-50%);
+    grid-column: 1;
+    grid-row: 5;
+    align-self: end;
+    margin-bottom: 3%;
 }
 
 /* -----------------------------------------------------------------------------*/
 /*      VELHO TESTAMENTO      */
 #velho-testamento {
     width: 600px;
+    height: 97vh;
     background-color: #e0c282;
-    margin: 2% auto;
-    padding-bottom: 2%;
+    margin: 1vh auto;
+    padding: 1% 0;
     display: none;
     position: relative;
+    grid-template-columns: 1fr;
+    grid-template-rows: 85% 15%;
+    align-items: center;
+    justify-items: center;
 }
 
 #img-vt {
-    width: 80%;
-    height: 97%;
-    padding-top: 2%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    grid-column: 1;
+    grid-row: 1;
+    align-self: center;
 }
 
 #retornarvt {
@@ -102,30 +108,31 @@ body {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    position: relative;
-    bottom: 40%;
-    margin: auto;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
 }
 
 /* -----------------------------------------------------------------------------*/
 /*      NOVO TESTAMENTO      */
 #novo-testamento {
     width: 600px;
-    height: 95vh;
+    height: 97vh;
     background-color: #e0c282;
-    margin: 2% auto;
-    padding-bottom: 2%;
+    margin: 1vh auto;
+    padding: 1% 0;
     display: none;
     position: relative;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 91% 9%;
+    grid-template-rows: 85% 15%;
+    align-items: center;
+    justify-items: center;
 }
 
 #img-nt {
-    width: 80%;
-    height: 97%;
-    padding-top: 2%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     grid-area: 1 / 1 / span 1 / span 2;
 }
 
@@ -137,30 +144,32 @@ body {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    position: absolute;
-    grid-area: 2 / 1 / span 1 / span 1;
-    right: 10%;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 /* -----------------------------------------------------------------------------*/
 /*      APOCRIFOS      */
 #apocrifos {
     width: 600px;
-    height: 95vh;
+    height: 97vh;
     background-color: #e0c282;
-    margin: 2% auto;
-    padding-bottom: 2%;
+    margin: 1vh auto;
+    padding: 1% 0;
     display: none;
     position: relative;
     grid-template-columns: 50% 50%;
-    grid-template-rows: 91% 9%;
+    grid-template-rows: 85% 15%;
+    align-items: center;
+    justify-items: center;
 }
 
 #img-ap {
-    width: 80%;
-    height: 97%;
-    padding-top: 2%;
-    margin: 0 auto;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
     grid-area: 1 / 1 / span 1 / span 2;
 }
 
@@ -172,9 +181,10 @@ body {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    position: absolute;
-    grid-area: 2 / 1 / span 1 / span 1;
-    right: 10%;
+    grid-column: 1;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
 }
 
 .link-saiba-mais {
@@ -187,9 +197,10 @@ body {
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
-    grid-area: 2 / 2 / span 1 / span 1;
-    position: relative;
-    left: 10%;
+    grid-column: 2;
+    grid-row: 2;
+    align-self: center;
+    justify-self: center;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -199,7 +210,7 @@ a:hover {
     -webkit-filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
     filter: drop-shadow(15px 10px 5px rgba(0, 0, 0, .5));
     -moz-transform: scale(1.1, 1.3);
-    -webkit-transform: scale(1.1, 1.3);
+    -webkit-transform: scale(1.1, 1.1);
     transform: scale(1.3);
 }
 
@@ -207,12 +218,12 @@ a:hover {
 /*      PÁGINA 2        */
 #pagina2 {
     width: 95vw;
-    min-width: 520px;
     max-width: 570px;
     max-height: 97vh;
     aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
-    margin: 2% auto;
+    margin: 1vh auto;
+    padding: 0 2%;
     display: none;
     position: relative;
     grid-template-columns: 30% 20% 32% 18%;
@@ -235,12 +246,17 @@ a:hover {
 #Marcatempo {
     grid-area: 1 / 4 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
-    width: 85px;
-    margin: 7% 0;
+    width: 85%;
+    aspect-ratio: 1 / 1.1;
+    margin: 7% auto;
     padding: 4%;
     text-align: center;
     border-radius: 8px;
     border: solid 4px black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 h5 {

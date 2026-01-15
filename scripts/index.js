@@ -117,7 +117,7 @@ function clicarRetornar() {
   document.getElementById("velho-testamento").style.display = "none"
   document.getElementById("novo-testamento").style.display = "none"
   document.getElementById("apocrifos").style.display = "none"
-  document.getElementById("pagina1").style.display = "block"
+  document.getElementById("pagina1").style.display = "grid"
 }
 function clicarStart() {
   document.getElementById("pagina1").style.display = "none"

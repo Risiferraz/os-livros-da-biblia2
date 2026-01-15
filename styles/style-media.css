@@ -1,0 +1,234 @@
+/* -----------------------------------------------------------------------------*/
+/*      MEDIA QUERIES - RESPONSIVIDADE      */
+
+/* iPads e tablets grandes (810x1080 e similares) */
+/* @media screen and (min-width: 769px) and (max-width: 1024px) {
+    #pagina1 {
+        width: 90vw;
+        max-width: 700px;
+        height: 99vh;
+        padding: 1.5% 3%;
+        gap: 3%;
+        grid-template-rows: 42% 11% 11% 11% 1fr;
+    }
+
+    .botao {
+        width: 110%;
+    }
+
+    #pagina2 {
+        width: 90vw;
+        max-width: 570px;
+        max-height: 96vh;
+        padding: 0 2.5%;
+    }
+
+    #start {
+        width: 32%;
+        font-size: clamp(22px, 5vw, 35px);
+        margin: auto;
+    }
+
+    #obs2 {
+        font-size: clamp(15px, 2.2vw, 18px);
+        line-height: 1.25rem;
+    }
+} */
+
+/* Tablets e telas médias - telas de até 768px */
+@media screen and (max-width: 768px) {
+    #pagina1 {
+        width: 98vw;
+        height: 99vh;
+        padding: 1.8% 4%;
+        gap: 3%;
+        grid-template-rows: 42% 11.5% 11.5% 11.5% 1fr;
+    }
+
+    .botao {
+        width: 105%;
+    }
+
+    #velho-testamento,
+    #novo-testamento,
+    #apocrifos {
+        width: 100%;
+        max-width: 600px;
+        height: 97vh;
+        padding-bottom: 0.5%;
+    }
+
+    #img-vt,
+    #img-nt,
+    #img-ap {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #retornarnt,
+    #retornarap {
+        aspect-ratio: 3 / 1;
+    }
+
+    #pagina2 {
+        width: 98vw;
+        max-width: 500px;
+        max-height: 98vh;
+        padding: 0 3%;
+    }
+
+    #start {
+        width: 35%;
+        margin-bottom: 2.5%;
+    }
+
+    #obs2 {
+        font-size: clamp(14px, 2.8vw, 18px);
+        line-height: 1.2rem;
+        padding: 1% 2% 0 3%;
+    }
+}
+
+/* Smartphones */
+@media screen and (max-width: 480px) {
+    #pagina1 {
+        width: 100vw;
+        gap: 0;
+        grid-template-rows: 40% 15% 15% 15% 15%;
+    }
+
+    #img1 {
+        height: 90%;
+        margin: 5% 0;
+    }
+
+    #img1:hover {
+        transform: scale(1.2);
+        cursor: pointer;
+    }
+
+    #velho-testamento {
+        width: 100%;
+        height: 95vh;
+        padding-bottom: 1%;
+    }
+
+    #img-vt {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #retornarvt {
+        width: 45vw;
+        bottom: 5vh;
+    }
+
+    #novo-testamento {
+        width: 100%;
+        height: 95vh;
+        grid-template-rows: 85% 15%;
+        align-items: center;
+    }
+
+    #img-nt {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+    }
+
+    #retornarnt {
+        width: 36vw;
+        font-size: 26px;
+    }
+
+    .link-saiba-mais {
+        width: 40vw;
+        font-size: 26px;
+    }
+
+    #apocrifos {
+        width: 100%;
+        grid-template-rows: 85% 15%;
+        align-items: center;
+    }
+
+    #retornarap {
+        width: 140px;
+        font-size: 25px;
+    }
+
+    #start {
+        width: 40%;
+        aspect-ratio: 10 / 4;
+        font-size: clamp(28px, 4vw, 33px);
+        border: outset 4px rgb(252, 237, 177);
+        align-self: center;
+        margin: 0;
+    }
+
+    #pagina2 {
+        width: 100vw;
+        max-width: 100%;
+        max-height: 98vh;
+        padding: 0 3%;
+        margin: 1vh auto;
+    }
+
+    .img-botao {
+        width: 95%;
+    }
+
+    #obs2 {
+        font-size: clamp(12px, 2.5vw, 16px);
+        line-height: 1.1rem;
+        padding: 1% 1% 0 2%;
+    }
+
+    #Marcatempo {
+        width: 90%;
+        margin: 5% auto;
+        padding: 3%;
+    }
+
+    h5 {
+        font-size: clamp(8px, 1.5vw, 10px);
+    }
+
+    h2 {
+        font-size: clamp(16px, 3.5vw, 25px);
+    }
+}
+
+/* Telas muito pequenas */
+@media screen and (max-width: 360px) {
+    #pagina1 {
+        grid-template-rows: 44% 12% 12% 12% 20%;
+    }
+
+    #img-vt {
+        width: 100%;
+        height: 100%;
+    }
+
+    #retornarvt {
+        bottom: 1vh;
+    }
+
+    #pagina2 {
+        width: 100vw;
+        height: 99vh;
+        padding: 1.5% 2%;
+    }
+
+    #obs2 {
+        font-size: clamp(11px, 2.2vw, 14px);
+        line-height: 1rem;
+    }
+
+    #Marcatempo {
+        width: 95%;
+        padding: 2%;
+    }
+}
