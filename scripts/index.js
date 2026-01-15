@@ -161,6 +161,19 @@ const inputDeResposta = document.getElementById('nome-do-livro')
 const TEMPO_PARA_APARECER_ERRADO = 2000
 inputDeResposta.value = ""
 inputDeResposta.disabled = true // Garante que o input inicia desabilitado
+
+// Função centralizada para definir tamanho de fonte baseado no texto
+function defineTamanhoFonte(texto) {
+  const textoNormalizado = texto.trim().toLowerCase()
+  const tamanho = texto.trim().length
+  if (textoNormalizado === "deuteronomio") return "17px"
+  if (textoNormalizado === "1tessalonicenses" || textoNormalizado === "2tessalonicenses") return "15px"
+  if (tamanho >= 12) return "17px"
+  if (tamanho >= 10) return "19px"
+  if (tamanho >= 8) return "22px"
+  return "26px"
+}
+
 function sorteiaLivroDaVez() {
   console.log("Lista de números já sorteados: ", listaDeNumerosAleatoriosJaSorteados)
   // const numeroAleatorio=59
@@ -201,11 +214,7 @@ function verificaSeAcertou() {
     document.getElementById("numeros-de-livros-salvos").textContent = listaDeNumerosAleatoriosJaSorteados.join(",")
     inputDeResposta.style.color = "rgb(1, 21, 86)" // cor: azul marinho
     inputDeResposta.style.fontFamily = "Swis721 BlkEx BT"
-    let fontSize
-    if (r === "deuteronomio") fontSize = "17px"
-    else if (r === "1tessalonicenses" || r === "2tessalonicenses") fontSize = "15px"
-    else if (resposta.trim().length > 10) fontSize = "19px"
-    else fontSize = "22px"
+    const fontSize = defineTamanhoFonte(resposta)
     console.log('definindo font-size =', fontSize)
     inputDeResposta.style.fontSize = fontSize
     console.log('computed font-size =', getComputedStyle(inputDeResposta).fontSize)
@@ -219,24 +228,13 @@ function verificaSeAcertou() {
   }
   else {
     inputDeResposta.style.color = "#ff0000"//cor: vermelho
-    const respostaErrada = inputDeResposta.value
-    if (respostaErrada == "deuteronomio") {
-      inputDeResposta.style.fontSize = "25px"
-    } else if (respostaErrada == "1tessalonicenses") {
-      inputDeResposta.style.fontSize = "22px"
-    } else if (respostaErrada == "2tessalonicenses") {
-      inputDeResposta.style.fontSize = "22px"
-    } else if (respostaErrada.length > 10) {
-      inputDeResposta.style.fontSize = "25px"
-    } else {
-      inputDeResposta.style.fontSize = "22px"
-    }
+    inputDeResposta.style.fontSize = defineTamanhoFonte(resposta)
     setTimeout(() => acoesParaRespostaErrada(), TEMPO_PARA_APARECER_ERRADO)
   }
 }
 function acoesParaRespostaErrada() { //para o modal "mensagem nova dica letra" e "mensagem nova dica número"
   inputDeResposta.style.color = "#000000"//cor:preto
-  inputDeResposta.style.fontSize = "18px"
+  inputDeResposta.style.fontSize = "22px"
   const primeiraLetra = livroCorreto.pegaPrimeiraLetra()
   inputDeResposta.value = ""
   gerenciadorDeErros.adicionaErro()

@@ -63,10 +63,10 @@ body {
 #start {
     background: rgb(182, 114, 13);
     width: 20vw;
-    height: 6vh;
+    height: 8vh;
     max-width: 200px;
     max-height: 70px;
-    font-size: clamp(20px, 4vw, 35px);
+    font-size: clamp(23px, 4vw, 29px);
     font-family: Impact, 'Arial Narrow Bold', sans-serif;
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
@@ -74,7 +74,6 @@ body {
     bottom: 3%;
     left: 50%;
     transform: translateX(-50%);
-    flex-shrink: 0;
 }
 
 /* -----------------------------------------------------------------------------*/
