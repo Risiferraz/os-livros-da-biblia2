@@ -13,7 +13,6 @@ class BotaoSair {
         const dadosSalvosJson=(!!window.localStorage.getItem("dadosSalvos"))?window.localStorage.getItem("dadosSalvos"):0
         const dadosSalvos = JSON.parse(dadosSalvosJson)
         if(!dadosSalvos) {
-            console.log("sem dados salvos")
             return this.pegaDadosZerados()
         }
         return dadosSalvos

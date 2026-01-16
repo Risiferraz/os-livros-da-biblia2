@@ -75,7 +75,7 @@ const listaDeLivros = [
 ]
 const jogoFinalizado = new JogoFinalizado()
 const dadosDoJogoFinalizado = jogoFinalizado.pegaDadosDoJogoFinalizado()
-if(!!dadosDoJogoFinalizado) {//se tem dados do jogo finalizado - se não tem = false, se não não tem = true
+if (!!dadosDoJogoFinalizado) {//se tem dados do jogo finalizado - se não tem = false, se não não tem = true
   jogoFinalizado.vaiParaProximaFase()
 }
 const cronometro = new Cronometro()
@@ -90,10 +90,10 @@ const botaoSair = new BotaoSair()
 const dadosSalvos = botaoSair.pegaDadosSalvos()
 pontuacao.setPontuacaoDoJogadorSalva(dadosSalvos.pontuacao)
 cronometro.setTempo(dadosSalvos.tempoGasto)
-if(!!dadosSalvos.numerosAleatoriosJaSorteados) {
-  if(typeof dadosSalvos.numerosAleatoriosJaSorteados === "string") {
-    if(dadosSalvos.numerosAleatoriosJaSorteados.includes(",")) {
-      listaDeNumerosAleatoriosJaSorteados=dadosSalvos.numerosAleatoriosJaSorteados.split(",")
+if (!!dadosSalvos.numerosAleatoriosJaSorteados) {
+  if (typeof dadosSalvos.numerosAleatoriosJaSorteados === "string") {
+    if (dadosSalvos.numerosAleatoriosJaSorteados.includes(",")) {
+      listaDeNumerosAleatoriosJaSorteados = dadosSalvos.numerosAleatoriosJaSorteados.split(",")
     }
     else {
       listaDeNumerosAleatoriosJaSorteados.push(dadosSalvos.numerosAleatoriosJaSorteados)
@@ -130,7 +130,7 @@ function clicarStart() {
 // X-X-X-X-X-X-X-X-X-X-X- PÁGINA 2 -X-X-X-X-X-X-X-X-X-X-X
 const livro = document.getElementById("livro")
 livro.addEventListener("click", () => {
-  if(gerenciadorDosLivros.verificaSeEstaHabilitado()) {
+  if (gerenciadorDosLivros.verificaSeEstaHabilitado()) {
     sorteiaLivroDaVez()
     gerenciadorDosLivros.bloqueiaLivroSorteado()
     // Habilita o input quando o livro é clicado
@@ -166,27 +166,33 @@ inputDeResposta.disabled = true // Garante que o input inicia desabilitado
 function defineTamanhoFonte(texto) {
   const textoNormalizado = texto.trim().toLowerCase()
   const tamanho = texto.trim().length
-  if (textoNormalizado === "deuteronomio") return "17px"
-  if (textoNormalizado === "1tessalonicenses" || textoNormalizado === "2tessalonicenses") return "15px"
-  if (tamanho >= 12) return "17px"
-  if (tamanho >= 10) return "19px"
-  if (tamanho >= 8) return "22px"
+  if (textoNormalizado === "deuteronomio") return "22px"
+  if (textoNormalizado === "1tessalonicenses" || textoNormalizado === "2tessalonicenses") return "22px"
+  if (tamanho >= 12) return "22px"
+  if (tamanho >= 10) return "23px"
+  if (tamanho >= 8) return "25px"
   return "26px"
 }
 
+// Função para definir família de fonte baseado no texto
+function defineFamiliaFonte(texto) {
+  const textoNormalizado = texto.trim().toLowerCase()
+  const tamanho = texto.trim().length
+  // Usa Impact para Deuteronômio, Tessalonicenses e palavras com 12+ letras
+  if (textoNormalizado === "deuteronomio") return "Impact, Arial"
+  if (textoNormalizado === "1tessalonicenses" || textoNormalizado === "2tessalonicenses") return "Impact, Arial"
+  if (tamanho >= 9) return "Impact, Arial"
+  // Usa Swis721 BlkEx BT para os demais
+  return "'Swis721 BlkEx BT', Arial"
+}
+
 function sorteiaLivroDaVez() {
-  console.log("Lista de números já sorteados: ", listaDeNumerosAleatoriosJaSorteados)
-  // const numeroAleatorio=59
-  console.log("Sorteando novo livro")
-  console.log("Último número sorteado: "+ultimoNumeroSorteado)
   const numeroAleatorio = Math.floor(Math.random() * listaDeLivros.length)
-  console.log("Último número aleatório: "+numeroAleatorio)
   if (listaDeNumerosAleatoriosJaSorteados.includes(numeroAleatorio)) {
     sorteiaLivroDaVez()
   }
   else {
     livroCorreto = listaDeLivros[numeroAleatorio]
-    console.log("O número sorteado foi: "+numeroAleatorio)
     listaDeLivros[numeroAleatorio].mostraLivro()
     pontuacao.passandoParaNovoLivro()
     ultimoNumeroSorteado = numeroAleatorio
@@ -201,51 +207,41 @@ function sorteiaLivroDaVez() {
 }
 inputDeResposta.addEventListener('keyup', event => {
   const valorDigitado = event.target.value
-  // listaDeLivros.filter(b => b.id.startsWith(valorDigitado))
-  //   .map(lb => lb.id)//transformando a lista de livros em ids
-  //   .forEach(id => console.log(id))
 })
 function verificaSeAcertou() {
   const resposta = inputDeResposta.value
   const r = resposta.trim().toLowerCase()
-  console.log('verificaSeAcertou → raw:', JSON.stringify(resposta), 'normalized:', r)
   if (livroCorreto.isRespostaCerta(resposta)) {
     listaDeNumerosAleatoriosJaSorteados.push(ultimoNumeroSorteado);
     document.getElementById("numeros-de-livros-salvos").textContent = listaDeNumerosAleatoriosJaSorteados.join(",")
     inputDeResposta.style.color = "rgb(1, 21, 86)" // cor: azul marinho
-    inputDeResposta.style.fontFamily = "Swis721 BlkEx BT"
+    inputDeResposta.style.fontFamily = defineFamiliaFonte(resposta)
     const fontSize = defineTamanhoFonte(resposta)
-    console.log('definindo font-size =', fontSize)
     inputDeResposta.style.fontSize = fontSize
-    console.log('computed font-size =', getComputedStyle(inputDeResposta).fontSize)
     livroCorreto.mostraRespostaCorreta()
-    // inputDeResposta.disabled = true (remover o comentário quando fizer a lógica de colocar o livro no testamento correto)
     pontuacao.adicionaPontuacaoCorreta()
     gerenciadorDeErros.zerarQuantidadeDeErros()
     listaDeLivrosJaAcertados.push(livroCorreto.id)
-    console.log("linha166")
-    console.table(listaDeLivrosJaAcertados)
   }
   else {
     inputDeResposta.style.color = "#ff0000"//cor: vermelho
+    inputDeResposta.style.fontFamily = defineFamiliaFonte(resposta)
     inputDeResposta.style.fontSize = defineTamanhoFonte(resposta)
     setTimeout(() => acoesParaRespostaErrada(), TEMPO_PARA_APARECER_ERRADO)
   }
 }
-function acoesParaRespostaErrada() { //para o modal "mensagem nova dica letra" e "mensagem nova dica número"
+function acoesParaRespostaErrada() { // Ações a serem feitas após o tempo de resposta errada
   inputDeResposta.style.color = "#000000"//cor:preto
-  inputDeResposta.style.fontSize = "22px"
-  const primeiraLetra = livroCorreto.pegaPrimeiraLetra()
-  inputDeResposta.value = ""
-  gerenciadorDeErros.adicionaErro()
-  if (gerenciadorDeErros.isPassarAVez()){
-    console.log("passando a vez")
+  inputDeResposta.style.fontSize = "22px" // Tamanho padrão
+  const primeiraLetra = livroCorreto.pegaPrimeiraLetra() // Pega a primeira letra do livro correto
+  inputDeResposta.value = "" // Limpa o input
+  gerenciadorDeErros.adicionaErro() // Adiciona 1 erro ao gerenciador de erros
+  if (gerenciadorDeErros.isPassarAVez()) { // Se atingiu o limite de erros para passar a vez
     gerenciadorDeErros.zerarQuantidadeDeErros()
     livroCorreto.fechaABiblia()
     gerenciadorDosLivros.habilitaLivroSorteado()
   }
   else {
-    console.log("errou")
     pontuacao.errando()
     if (isNaN(primeiraLetra)) {
       document.getElementById("dica-bonus").innerHTML =
@@ -288,7 +284,7 @@ function autocomplete(inp, arr) {
       /*check if the item starts with the same letters as the text field value:*/
       let propriedadesDosEstilos = {
         clicavel: true,
-        classeParaAdicionar:"habilitado"
+        classeParaAdicionar: "habilitado"
       }
       if (listaDeLivrosJaAcertados.includes(arr[i])) {
         propriedadesDosEstilos.clicavel = false
@@ -300,7 +296,7 @@ function autocomplete(inp, arr) {
         /*make the matching letters bold:*/
         b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
         b.innerHTML += arr[i].substr(val.length);
-        
+
         b.classList.add(propriedadesDosEstilos.classeParaAdicionar)
         b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
         if (propriedadesDosEstilos.clicavel) {
@@ -436,7 +432,7 @@ function realizaAcoesDeAcerto() {
 }
 
 function verificaFimDeJogo() {
-  if(isFimDeJogo()) {
+  if (isFimDeJogo()) {
     realizaAcoesDeFimDeJogo()
   }
 }
@@ -446,9 +442,9 @@ function isFimDeJogo() {
 function realizaAcoesDeFimDeJogo() {
   cronometro.pararCronometro()
   pontuacao.adicionaPontuacaoDeAcordoComCronometro(cronometro)
-  setTimeout(()=>{
+  setTimeout(() => {
     document.getElementById("mensagem-final").style.display = "grid"
-  },1800)
+  }, 1800)
 }
 
 function passaAVez() {

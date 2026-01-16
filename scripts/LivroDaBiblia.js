@@ -9,7 +9,6 @@ class LivroDaBiblia {
     }
     mostraLivro() {
         const livroElementoHTML = document.getElementById("livro")
-        console.log("Resposta: "+this.id)
         document.getElementById("nome-livro").textContent = this.id
         livroElementoHTML.src = this.src
         document.getElementById("dica").style.display = "none"

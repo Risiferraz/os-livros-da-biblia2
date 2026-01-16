@@ -1,42 +1,8 @@
 /* -----------------------------------------------------------------------------*/
 /*      MEDIA QUERIES - RESPONSIVIDADE      */
 
-/* iPads e tablets grandes (810x1080 e similares) */
-/* @media screen and (min-width: 769px) and (max-width: 1024px) {
-    #pagina1 {
-        width: 90vw;
-        max-width: 700px;
-        height: 99vh;
-        padding: 1.5% 3%;
-        gap: 3%;
-        grid-template-rows: 42% 11% 11% 11% 1fr;
-    }
-
-    .botao {
-        width: 110%;
-    }
-
-    #pagina2 {
-        width: 90vw;
-        max-width: 570px;
-        max-height: 96vh;
-        padding: 0 2.5%;
-    }
-
-    #start {
-        width: 32%;
-        font-size: clamp(22px, 5vw, 35px);
-        margin: auto;
-    }
-
-    #obs2 {
-        font-size: clamp(15px, 2.2vw, 18px);
-        line-height: 1.25rem;
-    }
-} */
-
-/* Tablets e telas médias - telas de até 768px */
-@media screen and (max-width: 768px) {
+/* Tablets e telas médias - telas de até 700px */
+@media screen and (max-width: 700px) {
     #pagina1 {
         width: 98vw;
         height: 99vh;

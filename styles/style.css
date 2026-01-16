@@ -218,16 +218,16 @@ a:hover {
 /*      PÁGINA 2        */
 #pagina2 {
     width: 95vw;
-    max-width: 570px;
+    max-width: 600px;
     max-height: 97vh;
     aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
     margin: 1vh auto;
-    padding: 0 2%;
+    padding: 0 3%;
     display: none;
     position: relative;
-    grid-template-columns: 30% 20% 32% 18%;
-    grid-template-rows: 11% 35% 11% 15% 10% auto auto;
+    grid-template-columns: 30% 20% 30% 20%;
+    grid-template-rows: 9vh 33vh 9vh 13vh 9vh 6vh 18vh;
 }
 
 #obs2 {
@@ -246,17 +246,16 @@ a:hover {
 #Marcatempo {
     grid-area: 1 / 4 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
-    width: 85%;
-    aspect-ratio: 1 / 1.1;
-    margin: 7% auto;
-    padding: 4%;
+    width: 85px;
+    height: 70px;
+    margin: auto;
     text-align: center;
     border-radius: 8px;
     border: solid 4px black;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    /* align-items: center; */
 }
 
 h5 {
@@ -307,8 +306,8 @@ h2 {
 #Marcapontuacao {
     grid-area: 3 / 4 / span 1 / span 1;
     background-color: rgb(182, 114, 13);
-    width: 85px;
-    margin: 7% 0;
+    width: 80%;
+    margin: auto;
     padding: 4%;
     text-align: center;
     border-radius: 8px;
@@ -321,9 +320,12 @@ h2 {
     background-size: contain;
     background-color: #e0c282;
     background-repeat: no-repeat;
+    background-position: center;
     border: transparent;
     width: 100%;
-    margin: 1% 0 1% 20%;
+    height: 100%;
+    justify-self: center;
+    align-self: center;
 }
 
 #botao-despenser-dicas:hover {
@@ -370,14 +372,14 @@ h2 {
 
 #nome-autocomplete {
     grid-area: 5 / 1 / span 1 / span 2;
-    margin: 0 5%;
+    margin: auto 5%;
     z-index: 2;
 }
 
 #nome-do-livro {
     background-image: url("/imagens/input.jpg");
     background-size: cover;
-    font: normal 16pt Impact, Arial;
+    font: normal 16pt "Swis721 BlkEx BT", Arial;
     color: rgb(18, 18, 18);
     width: 95%;
     margin: 3% auto;
@@ -393,7 +395,7 @@ h2 {
     grid-area: 5 / 3 / span 1 / span 1;
     width: 50px;
     height: 50px;
-    margin: auto -12%;
+    margin: auto 0;
 }
 
 #despenser-livros {
@@ -402,7 +404,7 @@ h2 {
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
     width: 160px;
     height: 55px;
-    margin: auto 12%;
+    margin: auto 28%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -419,7 +421,7 @@ h2 {
     border-radius: 8px;
     border: outset 5px rgb(252, 237, 177);
     position: relative;
-    margin: 7% 0 0 0;
+    margin: auto;
     display: none;
     z-index: 10;
 }
@@ -451,9 +453,8 @@ h2 {
     position: relative;
     border: solid 1px #30250b;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    width: 70%;
-    height: 90%;
-    margin-left: 5%;
+    height: 95%;
+    margin: 0 15%;
 }
 
 .dica {
@@ -478,7 +479,8 @@ h2 {
 .caixa-dropped {
     border: solid 1px #30250b;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    margin: 5%;
+    margin: auto;
+    width: 230px;
 }
 
 .caixa-dropped-escolha {
