@@ -230,6 +230,7 @@ function verificaSeAcertou() {
     setTimeout(() => acoesParaRespostaErrada(), TEMPO_PARA_APARECER_ERRADO)
   }
 }
+
 function acoesParaRespostaErrada() { // Ações a serem feitas após o tempo de resposta errada
   inputDeResposta.style.color = "#000000"//cor:preto
   inputDeResposta.style.fontSize = "22px" // Tamanho padrão
@@ -257,6 +258,7 @@ function acoesParaRespostaErrada() { // Ações a serem feitas após o tempo de 
     setTimeout(() => escondeModal(), 5000)
   }
 }
+
 function escondeModal() {
   document.getElementById("dica-bonus").innerHTML = ""
   document.getElementById("dica-bonus").style.zIndex = "-20"
@@ -443,6 +445,7 @@ function realizaAcoesDeFimDeJogo() {
   cronometro.pararCronometro()
   pontuacao.adicionaPontuacaoDeAcordoComCronometro(cronometro)
   setTimeout(() => {
+    document.getElementById("pagina2").style.display = "none"
     document.getElementById("mensagem-final").style.display = "grid"
   }, 1800)
 }
