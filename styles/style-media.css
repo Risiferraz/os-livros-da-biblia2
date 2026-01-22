@@ -1,14 +1,9 @@
-/* -----------------------------------------------------------------------------*/
-/*      MEDIA QUERIES - RESPONSIVIDADE      */
-
-
-/* Tablets e telas médias - telas de 481px até 700px */
-@media screen and (max-width: 700px) {
+/* Tablets e telas médias - telas de 481px até 600px */
+@media screen and (max-width: 600px) {
 
     #pagina1 {
         width: 98vw;
         height: 99vh;
-        padding: 1.8% 4%;
         gap: 3%;
         grid-template-rows: 42% 11.5% 11.5% 11.5% 1fr;
     }
@@ -45,9 +40,9 @@
     }
 
     #pagina2 {
-        grid-template-columns: 30% 20% 32% 18%;
-        grid-template-rows: 9vh 31vh 9vh 12vh 9vh 6vh 21vh;
-        padding: 0 2%;
+        grid-template-rows: minmax(7%, auto) minmax(33%, auto) minmax(7%, auto) minmax(10%, auto) auto auto auto;
+        height: 97vh;
+        margin: 1% auto;
     }
 
     #obs2 {
@@ -74,7 +69,7 @@
     #container-dicas {
         height: 90%;
         min-width: 170px;
-        margin: auto 5% auto 19%;
+        margin: auto
     }
 
     #despenser-livros {
@@ -87,14 +82,14 @@
     }
 
     .caixa-dropped {
-        width: 39vw;
+        width: 75%;
     }
 
     #pontuacao-final,
     #tempo-final,
     #proxima-fase,
     #sair-jogo-finalizado {
-        width: 70%;
+        width: 75%;
         max-height: 75px;
         padding: 3%;
         font-size: 24px;
@@ -103,13 +98,19 @@
 
 }
 
+/* --------------------------------------------------*/
 /* Smartphones - telas de 376 a 480px */
+
 @media screen and (max-width: 480px) {
 
     #pagina1 {
         width: 100vw;
+        height: 100vh;
+        max-height: none;
         gap: 0;
-        grid-template-rows: 40% 15% 15% 15% 15%;
+        padding: 3% 2%;
+        margin: 0;
+        grid-template-rows: 37vh 13vh 13vh 13vh auto;
     }
 
     #img1 {
@@ -119,6 +120,7 @@
 
     #img1:hover {
         transform: scale(1.2);
+        transform-origin: center top;
         cursor: zoom-in;
     }
 
@@ -159,9 +161,10 @@
     }
 
     #pagina2 {
-        grid-template-rows: 10vh 30vh 10vh 13vh 10vh 6vh 19vh;
+        grid-template-rows: 10vh 30vh 10vh 14vh 10vh 6vh 20vh;
+        grid-template-columns: 30% 20% 34% 16%;
         width: 100vw;
-        max-height: 98vh;
+        height: 100vh;
     }
 
     #obs2 {
@@ -171,7 +174,8 @@
     }
 
     #Marcatempo {
-        width: 90%;
+        width: 100%;
+        height: 75%;
         margin: auto;
         padding: 3%;
     }
@@ -188,24 +192,25 @@
     }
 
     #Marcapontuacao {
-        width: 90%;
-        margin: auto;
-        height: 76%;
-    }
-
-    .dica {
         width: 100%;
-        position: relative;
-        right: 10%;
-        top: 6%;
+        margin: auto;
+        height: 70%;
     }
 
     #seta1 {
         margin: auto 0% auto -7%;
+        width: 40px;
+        height: 40px;
+    }
+
+    #seta2 {
+        margin: auto 5% auto 20%;
+        width: 40px;
+        height: 40px;
     }
 
     #container-dicas {
-        min-width: auto;
+        margin: 0 8%;
     }
 
     #despenser-livros {
@@ -213,9 +218,18 @@
         width: 150px;
     }
 
+    #nome-do-livroautocomplete-list div {
+        font: normal 4vw Impact, Arial;
+    }
+
+    #nome-do-livroautocomplete-list div:hover {
+        font: normal 3vw "Swis721 BlkEx BT", Arial;
+    }
+
     #obs4 {
         font-size: 3.7vw;
         line-height: 1.4rem;
+        padding: 0% 0 0 2%;
     }
 
     .caixa-dropped {
@@ -231,6 +245,7 @@
 
     #mensagem-final {
         grid-template-rows: 16% 11% 11% auto;
+        width: 100vw;
     }
 
     #mensagem-de-erro,
@@ -241,11 +256,10 @@
     }
 
     #sair-salvar {
-        width: 95%;
-        height: 80%;
-        font-size: 6vw;
+        width: 100%;
+        height: 75%;
+        font-size: 5vw;
     }
-
 
     #pontuacao-final,
     #tempo-final,
@@ -256,11 +270,12 @@
     }
 }
 
-/* Telas muito pequenas */
-@media screen and (max-width: 375px) {
+/* #region */
 
+/* Telas muito pequenas - Telas menores que 375px */
+@media screen and (max-width: 375px) {
     #pagina1 {
-        grid-template-rows: 44% 12% 12% 12% 20%;
+        grid-template-rows: 44% 12% 14% 14% 20%;
     }
 
     #obs2 {
@@ -268,7 +283,11 @@
     }
 
     #Marcatempo {
-        width: 95%;
+        width: 100%;
+    }
+
+    h2 {
+        font-size: 4.8vw;
     }
 
     #obs3 {
@@ -286,9 +305,19 @@
         margin: auto 38%;
     }
 
+    #container-dicas {
+        margin: 0 6%;
+        width: 85%;
+        min-width: auto;
+    }
+
     #despenser-livros {
         width: 36vw;
         margin: auto 21%;
+    }
+
+    .caixa-dropped {
+        height: 80%;
     }
 
     #pontuacao-final,
@@ -299,20 +328,18 @@
         font-size: 20px;
     }
 
-    h2 {
-        font-size: 6vw;
-    }
-
     h5 {
         font-size: 9px;
     }
 
 }
 
-/* Telas com largura até 375px e altura 667px */
+/* #endregion */
+
+/* Telas com largura até 375px e altura de até 667px */
 @media screen and (max-width: 375px) and (max-height: 667px) {
     #pagina2 {
-        grid-template-rows: 10vh 29vh 10vh 13vh 9vh 6vh 22vh;
+        grid-template-rows: 10vh 29vh 10vh 13vh 9vh 7vh 22vh;
         width: 100vw;
     }
 
@@ -323,4 +350,238 @@
     #Marcapontuacao {
         height: 85%;
     }
+
+    #container-dicas {
+        margin: 0 9%;
+    }
+
+    #despenser-livros {
+        margin: auto 18%;
+    }
+
+    .caixa-dropped {
+        margin: 5% auto;
+    }
+
+    #mensagem-final {
+        grid-template-rows: 14% 11% 11% auto;
+        height: 100vh;
+    }
+}
+
+/* -----------------------------------------------------------------------------*/
+/* MENSAGEM DE ORIENTAÇÃO LANDSCAPE - Oculta por padrão */
+/* #region */
+
+#landscape-warning {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.95);
+    z-index: 10000;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#landscape-warning-content {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    color: white;
+    max-width: 90%;
+    width: fit-content;
+    margin: auto;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+}
+
+#landscape-warning-content h2 {
+    margin: 0 0 15px 0;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#landscape-warning-content p {
+    margin: 15px 0;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+#rotate-icon {
+    font-size: 48px;
+    margin-top: 20px;
+    animation: rotateAnimation 2s infinite;
+}
+
+@keyframes rotateAnimation {
+
+    0%,
+    100% {
+        transform: rotate(0deg);
+    }
+
+    50% {
+        transform: rotate(90deg);
+    }
+}
+
+/* #endregion */
+
+/* -----------------------------------------------------------------------------*/
+/*      ORIENTAÇÃO LANDSCAPE EM SMARTPHONES      */
+/* Exibe a mensagem "landscape-warning" em telas menores que 928px */
+/* Informa que o aplicativo foi feito para ser usado em orientação retrato */
+@media screen and (orientation: landscape) and (max-width: 927px) {
+
+    /* MOSTRAR MENSAGEM DE ORIENTAÇÃO EM LANDSCAPE */
+    #landscape-warning {
+        display: flex !important;
+    }
+
+    body {
+        overflow-x: hidden;
+        overflow-y: auto;
+        scroll-behavior: smooth;
+    }
+
+    #pagina1 {
+        max-height: none;
+        height: auto;
+        min-height: 100vh;
+        width: auto;
+        max-width: none;
+        aspect-ratio: auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #velho-testamento,
+    #novo-testamento,
+    #apocrifos {
+        max-height: none;
+        height: auto;
+        min-height: 100vh;
+        max-width: none;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #pagina2 {
+        max-height: none;
+        height: auto;
+        min-height: 100vh;
+        grid-template-rows: auto auto auto auto auto auto auto;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    #Marcatempo,
+    #Marcapontuacao,
+    #sair-salvar {
+        width: 80px;
+        height: 80px;
+        max-height: none;
+        min-height: fit-content;
+        margin: 3% auto;
+    }
+
+    .caixa-dropped {
+        height: auto;
+        max-height: none;
+        min-height: fit-content;
+    }
+
+    #container-dicas {
+        height: auto;
+        max-height: none;
+    }
+
+    #mensagem-final {
+        grid-template-rows: auto auto auto auto;
+        height: auto;
+        max-height: none;
+    }
+
+    #pontuacao-final,
+    #tempo-final,
+    #proxima-fase,
+    #sair-jogo-finalizado {
+        max-height: none;
+        height: auto;
+        min-height: fit-content;
+    }
+
+    #dica-bonus #imagem-de-fundo,
+    #mensagem-de-erro,
+    #mensagem-de-acerto {
+        height: auto;
+        max-height: none;
+    }
+
+}
+
+/* -----------------------------------------------------------------------------*/
+/*      TELAS COM LARGURA > 700px E ALTURA < 840px      */
+
+@media screen and (min-width: 701px) and (max-height: 840px) {
+
+    #pagina1 {
+        width: 70vw;
+        padding: 1% 0;
+        grid-template-rows: auto auto auto auto auto;
+        max-height: none;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    #img1:hover {
+        transform: scale(1.2);
+        transform-origin: center top;
+        cursor: zoom-in;
+    }
+
+    .botao {
+        width: 90%;
+    }
+
+    #start {
+        width: 20%;
+        max-width: 200px;
+        padding: 2%;
+        font-size: clamp(20px, 3vw, 37px);
+    }
+
+    #velho-testamento,
+    #novo-testamento,
+    #apocrifos {
+        width: auto;
+        height: 97vh;
+        max-height: 97vh;
+        max-width: none;
+        aspect-ratio: 1 / 1.4;
+    }
+
+    #pagina2 {
+        grid-template-rows: auto auto auto auto auto auto auto;
+        height: auto;
+        max-height: none;
+        min-height: 100vh;
+        margin: 1% auto;
+        overflow-y: auto;
+    }
+
+    #mensagem-final {
+        width: auto;
+        height: 97vh;
+        max-height: 97vh;
+        max-width: none;
+        aspect-ratio: 1 / 1.4;
+    }
+
 }

@@ -22,11 +22,11 @@ body {
     aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
     margin: 1vh auto;
-    padding: 2.5% 3%;
+    padding: 3% 0;
     display: grid;
     grid-template-columns: 1fr;
-    grid-template-rows: 42% 15% 13% 13% 1fr;
-    gap: 1.5%;
+    grid-template-rows: 41% 15% 13% 13% 1fr;
+    gap: 2.5%;
     align-items: center;
     justify-items: center;
     position: relative;
@@ -43,7 +43,6 @@ body {
     background-color: transparent;
     border: none;
     cursor: pointer;
-    overflow: hidden;
     width: 100%;
     height: auto;
     display: flex;
@@ -215,15 +214,13 @@ a:hover {
 #pagina2 {
     display: none;
     position: relative;
-    width: 95vw;
+    max-width: 600px;
+    height: 98vh;
     margin: 1vh auto;
     padding: 0 3%;
-    max-width: 600px;
-    max-height: 97vh;
-    aspect-ratio: 1 / 1.4;
     background-color: #e0c282;
     grid-template-columns: 30% 20% 30% 20%;
-    grid-template-rows: 9vh 33vh 9vh 13vh 9vh 6vh 18vh;
+    grid-template-rows: 9vh 33vh 9vh 13vh 9vh 6.5vh auto;
 }
 
 #obs2 {
@@ -332,33 +329,29 @@ h2 {
 #nome-do-livroautocomplete-list div {
     background-color: white;
     border: 1px black solid;
-    font: normal 13pt Impact, Arial;
+    font: normal 18px Impact, Arial;
     color: rgb(18, 18, 18);
     margin: 1% auto;
     text-align: center;
-    /* para deixar p texto horizontalmente centralizado*/
     border: solid 3px rgb(18, 18, 18);
     text-transform: uppercase;
-    /*para deixar o texto sempre em maiúsculo*/
 }
 
 #nome-do-livroautocomplete-list div:hover {
     background-color: rgb(248, 227, 108);
     cursor: pointer;
-    font: normal 11pt "Swis721 BlkEx BT", Arial;
+    font: normal 16px "Swis721 BlkEx BT", Arial;
     color: rgb(18, 18, 18);
     margin: 1% auto;
     text-align: center;
-    /* para deixar p texto horizontalmente centralizado*/
     border: solid 3px rgb(18, 18, 18);
     text-transform: uppercase;
-    /*para deixar o texto sempre em maiúsculo*/
 }
 
 #nome-do-livroautocomplete-list div.desabilitado {
     background-color: #ceb379;
     border-style: none;
-    font: normal 13pt "Swis721 BdCnOul Bt", Impact, Arial;
+    font: normal 17px "Swis721 BdCnOul Bt", Impact, Arial;
     color: rgba(115, 102, 36, 0.7);
     margin: 1% auto;
     text-align: center;
@@ -375,7 +368,7 @@ h2 {
 #nome-do-livro {
     background-image: url("/imagens/input.jpg");
     background-size: cover;
-    font: normal 16pt "Swis721 BlkEx BT", Arial;
+    font: normal 18px "Swis721 BlkEx BT", Arial;
     color: rgb(18, 18, 18);
     width: 95%;
     margin: 3% auto;
@@ -432,9 +425,8 @@ h2 {
 .draggable:hover {
     /*droppable-hover = tranformação da cx de receber elemento quando o mouse passa por ela*/
     border-width: 2px;
-    transform: scale(1.2);
     cursor: move;
-    /*muda o tipo do cursor - neste caso para mover o elemento*/
+    transform: rotate(0deg);
 }
 
 #seta2 {
@@ -456,10 +448,14 @@ h2 {
 .dica {
     width: 100%;
     display: none;
+    position: absolute;
+    top: 50%;
+    transform: translate(0%, -50%);
 }
 
 .dica:hover {
-    transform: scale(130%);
+    transform: translateY(-50%) scale(130%);
+    transform-origin: right center;
 }
 
 #obs4 {
@@ -475,8 +471,10 @@ h2 {
 .caixa-dropped {
     border: solid 1px #30250b;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    margin: auto;
-    width: 230px;
+    margin: 0 auto 2% auto;
+    width: 210px;
+    height: 90%;
+
 }
 
 .caixa-dropped-escolha {
@@ -504,10 +502,12 @@ h2 {
 
 #img-cx-nt {
     width: 100%;
+    height: 100%;
 }
 
 #img-cx-at {
     width: 100%;
+    height: 100%;
 }
 
 /* MENSAGENS TEMPORÁRIAS */
@@ -590,8 +590,11 @@ h2 {
 }
 
 #mensagem-final {
+    width: 75%;
     display: none;
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
     background-color: #e0c282;
     grid-template-rows: 17% 11% 11% auto;
     grid-template-columns: 1fr 1fr;
@@ -718,3 +721,4 @@ h2 {
 #nome-livro {
     display: none;
 }
+

@@ -98,23 +98,34 @@
             <img src="imagens\mensagem-de-acerto.png" id="mensagem-de-acerto">
         </div>
     </div>
-        <div id="mensagem-final">
-            <img id="img-mensagem-final" src="imagens\mensagem-final.png">
-            <div id="pontuacao-final">
-                <h5>SUA PONTUAÇÃO FINAL:</h5>
-                <h2 id="mostra-pontuacao-final">0000</h2>
-            </div>
-            <div id="tempo-final">
-                <h5>DURAÇÃO DE TEMPO:</h5>
-                <h2 id="mostra-tempo-final">00:00</h2>
-            </div>
-            <button type="button" id="sair-jogo-finalizado">SAIR</button>
-            <button type="button" id="proxima-fase">PRÓXIMA FASE</button>
-            <!-- <a href="2fase.html" rel="next" ></a> -->
+    <div id="mensagem-final">
+        <img id="img-mensagem-final" src="imagens\mensagem-final.png">
+        <div id="pontuacao-final">
+            <h5>SUA PONTUAÇÃO FINAL:</h5>
+            <h2 id="mostra-pontuacao-final">0000</h2>
         </div>
+        <div id="tempo-final">
+            <h5>DURAÇÃO DE TEMPO:</h5>
+            <h2 id="mostra-tempo-final">00:00</h2>
+        </div>
+        <button type="button" id="sair-jogo-finalizado">SAIR</button>
+        <button type="button" id="proxima-fase">PRÓXIMA FASE</button>
+        <!-- <a href="2fase.html" rel="next" ></a> -->
+    </div>
     <p id="pontuacao-para-salvar"></p>
     <p id="dados-salvos-json"></p>
     <p id="numeros-de-livros-salvos"></p>
+
+    <!-- MENSAGEM DE ORIENTAÇÃO LANDSCAPE -->
+    <div id="landscape-warning">
+        <div id="landscape-warning-content">
+            <h2>⚠️ Atenção!</h2>
+            <p>Para uma melhor experiência, <strong>gire seu dispositivo</strong> para a posição vertical (portrait).
+            </p>
+            <div id="rotate-icon">📱 ↻</div>
+        </div>
+    </div>
+
     <script src="scripts/GerenciadorDeSave.js" defer></script>
     <script src="scripts/cronometro.js" defer></script>
     <script src="scripts/pontuacao.js" defer></script>

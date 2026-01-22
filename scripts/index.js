@@ -102,24 +102,29 @@ if (!!dadosSalvos.numerosAleatoriosJaSorteados) {
 }
 // X-X-X-X-X-X-X-X-X-X-X- PÁGINA 1-X-X-X-X-X-X-X-X-X-X-X
 function clicarVT() {
+  window.scrollTo(0, 0)
   document.getElementById("pagina1").style.display = "none"
   document.getElementById("velho-testamento").style.display = "grid"
 }
 function clicarNT() {
+  window.scrollTo(0, 0)
   document.getElementById("pagina1").style.display = "none"
   document.getElementById("novo-testamento").style.display = "grid"
 }
 function clicarAP() {
+  window.scrollTo(0, 0)
   document.getElementById("pagina1").style.display = "none"
   document.getElementById("apocrifos").style.display = "grid"
 }
 function clicarRetornar() {
+  window.scrollTo(0, 0)
   document.getElementById("velho-testamento").style.display = "none"
   document.getElementById("novo-testamento").style.display = "none"
   document.getElementById("apocrifos").style.display = "none"
   document.getElementById("pagina1").style.display = "grid"
 }
 function clicarStart() {
+  window.scrollTo(0, 0)
   document.getElementById("pagina1").style.display = "none"
   document.getElementById("pagina2").style.display = "grid"
   cronometro.iniciaCronometro()
@@ -131,6 +136,14 @@ function clicarStart() {
 const livro = document.getElementById("livro")
 livro.addEventListener("click", () => {
   if (gerenciadorDosLivros.verificaSeEstaHabilitado()) {
+    // Scroll para o elemento livro em modo landscape em smartphones
+    if (window.matchMedia("(orientation: landscape) and (max-width: 770px)").matches) {
+      const livroElemento = document.getElementById("livro")
+      if (livroElemento) {
+        livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      }
+    }
+    
     sorteiaLivroDaVez()
     gerenciadorDosLivros.bloqueiaLivroSorteado()
     // Habilita o input quando o livro é clicado
@@ -166,12 +179,10 @@ inputDeResposta.disabled = true // Garante que o input inicia desabilitado
 function defineTamanhoFonte(texto) {
   const textoNormalizado = texto.trim().toLowerCase()
   const tamanho = texto.trim().length
-  if (textoNormalizado === "deuteronomio") return "22px"
-  if (textoNormalizado === "1tessalonicenses" || textoNormalizado === "2tessalonicenses") return "22px"
   if (tamanho >= 12) return "22px"
   if (tamanho >= 10) return "23px"
-  if (tamanho >= 8) return "25px"
-  return "26px"
+  if (tamanho >= 7) return "24px"
+  return "24px"
 }
 
 // Função para definir família de fonte baseado no texto
@@ -377,6 +388,9 @@ autocomplete(document.getElementById("nome-do-livro"), listaDeLivros.map(b => b.
 
 document.addEventListener("dragstart", event => {
   dragged = event.target;
+  setTimeout(() => {
+    event.target.style.opacity = "0";
+  }, 0);
   document.getElementById("at").classList.add("caixa-dropped-escolha")
   document.getElementById("nt").classList.add("caixa-dropped-escolha")
 });
@@ -445,6 +459,7 @@ function realizaAcoesDeFimDeJogo() {
   cronometro.pararCronometro()
   pontuacao.adicionaPontuacaoDeAcordoComCronometro(cronometro)
   setTimeout(() => {
+    window.scrollTo(0, 0)
     document.getElementById("pagina2").style.display = "none"
     document.getElementById("mensagem-final").style.display = "grid"
   }, 1800)
@@ -452,6 +467,15 @@ function realizaAcoesDeFimDeJogo() {
 
 function passaAVez() {
   if (!livroCorreto) return
+  
+  // Scroll para o elemento livro em modo landscape em smartphones
+  if (window.matchMedia("(orientation: landscape) and (max-width: 770px)").matches) {
+    const livroElemento = document.getElementById("livro")
+    if (livroElemento) {
+      livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }
+  }
+  
   // Habilita o input quando o livro é clicado
   const inputNomeDoLivro = document.getElementById("nome-do-livro")
   if (inputNomeDoLivro) {
