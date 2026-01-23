@@ -325,7 +325,7 @@
         margin: 1px 0;
         font-size: 95%;
     }
-    
+
     #despenser-livros {
         margin: auto 21%;
         height: 50px;
@@ -381,6 +381,10 @@
         font-family: Impact, Arial;
     }
 
+    #seta2 {
+        margin: auto 13%;
+    }
+
     .caixa-dropped {
         margin: 5% auto;
     }
@@ -392,7 +396,7 @@
 }
 
 
-/* Telas com largura até 375px e altura de até 667px */
+/* Telas com largura até 360px e altura de até 640px */
 @media screen and (max-width: 360px) and (max-height: 640px) {
     #pagina2 {
         grid-template-rows: 9vh 29vh 10vh 12vh 8vh 7vh 25vh;

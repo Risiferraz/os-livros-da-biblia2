@@ -72,7 +72,7 @@ const listaDeLivros = [
   new LivroDaBiblia("nt", "3joao", "/versiculos/3joao.jpg", "/dicas/3joao.png", "/livros/3jo.png"),
   new LivroDaBiblia("nt", "judas", "/versiculos/judas.jpg", "/dicas/judas.png", "/livros/jd.png"),
   new LivroDaBiblia("nt", "apocalipse", "/versiculos/apocalipse.jpg", "/dicas/apocalipse.png", "/livros/ap.png"),
-]
+];
 const jogoFinalizado = new JogoFinalizado()
 const dadosDoJogoFinalizado = jogoFinalizado.pegaDadosDoJogoFinalizado()
 if (!!dadosDoJogoFinalizado) {//se tem dados do jogo finalizado - se não tem = false, se não não tem = true
@@ -143,7 +143,7 @@ livro.addEventListener("click", () => {
         livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
       }
     }
-    
+
     sorteiaLivroDaVez()
     gerenciadorDosLivros.bloqueiaLivroSorteado()
     // Habilita o input quando o livro é clicado
@@ -276,25 +276,17 @@ function escondeModal() {
 }
 
 function autocomplete(inp, arr) {
-  /*the autocomplete function takes two arguments,
-  the text field element and an array of possible autocompleted values:*/
   var currentFocus;
-  /*execute a function when someone writes in the text field:*/
   inp.addEventListener("input", function (e) {
     var a, b, i, val = this.value;
-    /*close any already open lists of autocompleted values*/
     closeAllLists();
     if (!val) { return false; }
     currentFocus = -1;
-    /*create a DIV element that will contain the items (values):*/
     a = document.createElement("DIV");
     a.setAttribute("id", this.id + "autocomplete-list");
     a.setAttribute("class", "autocomplete-items");
-    /*append the DIV element as a child of the autocomplete container:*/
     document.getElementById('nome-autocomplete').appendChild(a);
-    /*for each item in the array...*/
     for (i = 0; i < arr.length; i++) {
-      /*check if the item starts with the same letters as the text field value:*/
       let propriedadesDosEstilos = {
         clicavel: true,
         classeParaAdicionar: "habilitado"
@@ -304,22 +296,16 @@ function autocomplete(inp, arr) {
         propriedadesDosEstilos.classeParaAdicionar = "desabilitado"
       }
       if (arr[i].substr(0, val.length).toUpperCase() == val.toUpperCase()) {
-        /*create a DIV element for each matching element:*/
         b = document.createElement("DIV");
-        /*make the matching letters bold:*/
         b.innerHTML = "<strong>" + arr[i].substr(0, val.length) + "</strong>";
         b.innerHTML += arr[i].substr(val.length);
 
         b.classList.add(propriedadesDosEstilos.classeParaAdicionar)
         b.innerHTML += "<input type='hidden' value='" + arr[i] + "'>";
         if (propriedadesDosEstilos.clicavel) {
-          /*execute a function when someone clicks on the item value (DIV element):*/
           b.addEventListener("click", function (e) {
-            /*insert the value for the autocomplete text field:*/
             inp.value = this.getElementsByTagName("input")[0].value;
             verificaSeAcertou()
-            /*close the list of autocompleted values,
-            (or any other open lists of autocompleted values:*/
             closeAllLists();
           });
         }
@@ -383,7 +369,68 @@ function autocomplete(inp, arr) {
     closeAllLists(e.target);
   });
 }
-autocomplete(document.getElementById("nome-do-livro"), listaDeLivros.map(b => b.id));
+// Opções falsas para incrementar o autocomplete
+const opcoesFalsas = [
+  "Abraão",
+  "Baal-Peor",
+  "Babilônia",
+  "Balaão",
+  "Barnabé",
+  "Caim",
+  "Cefas",
+  "Clemente",
+  "Dã",
+  "Davi",
+  "Demas",
+  "Fariseus",
+  "Fileto",
+  "Filisteus",
+  "Gadarenos",
+  "Gentios",
+  "Gideão",
+  "Hananias",
+  "Hebraico",
+  "Herodes",
+  "Irmãos",
+  "Isaque",
+  "Israelitas",
+  "Lameque",
+  "Levi",
+  "Ló",
+  "Nazireus",
+  "Noé",
+  "Nicodemos",
+  "Onésimo",
+  "Obede",
+  "Omega",
+  "Paulo",
+  "Paraiso",
+  "Patriarcas",
+  "Peregrinações",
+  "Redenção",
+  "Reino",
+  "Revelação",
+  "Sabatico",
+  "Salomão",
+  "Tabernáculo",
+  "Tomé",
+  "Ufarsim",
+  "Unção",
+  "Ungido",
+  "Unigênito",
+  "Universal",
+  "Vaidade",
+  "Varão",
+  "Virtudes",
+  "Visão",
+  "Xerxes",
+  "Zaqueu",
+  "Zebedeu",
+  "Zelote",
+  "Zorobabel",
+];
+const opcoesParaAutocomplete = listaDeLivros.map(b => b.id).concat(opcoesFalsas);
+autocomplete(document.getElementById("nome-do-livro"), opcoesParaAutocomplete);
 // let dragged = null;
 
 document.addEventListener("dragstart", event => {
@@ -471,7 +518,7 @@ function realizaAcoesDeFimDeJogo() {
 
 function passaAVez() {
   if (!livroCorreto) return
-  
+
   // Scroll para o elemento livro em modo landscape em smartphones
   if (window.matchMedia("(orientation: landscape) and (max-width: 770px)").matches) {
     const livroElemento = document.getElementById("livro")
@@ -479,7 +526,7 @@ function passaAVez() {
       livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
     }
   }
-  
+
   // Habilita o input quando o livro é clicado
   const inputNomeDoLivro = document.getElementById("nome-do-livro")
   if (inputNomeDoLivro) {

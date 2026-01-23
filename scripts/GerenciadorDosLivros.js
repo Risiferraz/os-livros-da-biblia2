@@ -1,3 +1,4 @@
+// listaDeLivros removida daqui, está apenas em index.js
 class GerenciadorDosLivros {
     constructor(){
         this.isHabilitado = true
@@ -15,3 +16,4 @@ class GerenciadorDosLivros {
         return this.isHabilitado
     }
 }
+
