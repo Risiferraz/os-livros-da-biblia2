@@ -326,15 +326,37 @@ h2 {
     cursor: pointer;
 }
 
+#nome-autocomplete {
+    grid-area: 5 / 1 / span 1 / span 2;
+    margin: auto;
+    z-index: 2;
+}
+
+#nome-do-livro {
+    background-image: url("/imagens/input.jpg");
+    background-size: cover;
+    font: normal 18px "Swis721 BlkEx BT", Arial;
+    color: rgb(18, 18, 18);
+    width: 95%;
+    margin: 1% auto;
+    padding: 7% 2% 3% 2%;
+    text-align: center;
+    border: solid 4px rgb(18, 18, 18);
+    border-radius: 4px;
+    box-shadow: 1px 1px 2px #333333;
+    text-transform: uppercase;
+}
+
 #nome-do-livroautocomplete-list div {
     background-color: white;
     border: 1px black solid;
     font: normal 18px Impact, Arial;
     color: rgb(18, 18, 18);
-    margin: 1% auto;
+    margin: 2px 0;
     text-align: center;
     border: solid 3px rgb(18, 18, 18);
     text-transform: uppercase;
+    width: 95%;
 }
 
 #nome-do-livroautocomplete-list div:hover {
@@ -346,6 +368,7 @@ h2 {
     text-align: center;
     border: solid 3px rgb(18, 18, 18);
     text-transform: uppercase;
+    margin: 0;
 }
 
 #nome-do-livroautocomplete-list div.desabilitado {
@@ -357,27 +380,6 @@ h2 {
     text-align: center;
     text-transform: uppercase;
     cursor: none;
-}
-
-#nome-autocomplete {
-    grid-area: 5 / 1 / span 1 / span 2;
-    margin: auto 5%;
-    z-index: 2;
-}
-
-#nome-do-livro {
-    background-image: url("/imagens/input.jpg");
-    background-size: cover;
-    font: normal 18px "Swis721 BlkEx BT", Arial;
-    color: rgb(18, 18, 18);
-    width: 95%;
-    margin: 3% auto;
-    padding: 7% 2% 3% 2%;
-    text-align: center;
-    border: solid 4px rgb(18, 18, 18);
-    border-radius: 4px;
-    box-shadow: 1px 1px 2px #333333;
-    text-transform: uppercase;
 }
 
 #seta1 {
@@ -721,4 +723,3 @@ h2 {
 #nome-livro {
     display: none;
 }
-

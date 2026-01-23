@@ -423,6 +423,10 @@ document.addEventListener("drop", event => {
 function realizaAcoesDeErro() {
   pontuacao.errandoTestamento()
   document.getElementById("modal-erro").checked = true
+  // Recoloca a imagem draggable na div 'despenser-livros'
+  if (livroCorreto && typeof livroCorreto.criaImagemResposta === 'function') {
+    document.getElementById('despenser-livros').innerHTML = livroCorreto.criaImagemResposta();
+  }
   setTimeout(() => {
     document.getElementById("modal-erro").checked = false
   }, 1200)

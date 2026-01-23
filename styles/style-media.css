@@ -40,7 +40,7 @@
     }
 
     #pagina2 {
-        grid-template-rows: minmax(7%, auto) minmax(33%, auto) minmax(7%, auto) minmax(10%, auto) auto auto auto;
+        grid-template-rows: minmax(7%, auto) minmax(33%, auto) minmax(7%, auto) minmax(10%, auto) minmax(10%, auto) auto auto;
         height: 97vh;
         margin: 1% auto;
     }
@@ -60,6 +60,15 @@
         font-size: clamp(2.6vw, 18px, 3.2vw);
         line-height: 1.3rem;
         padding: 2% 0 0 1%;
+    }
+
+    #nome-do-livro {
+        font-size: 19px !important;
+    }
+
+    #nome-do-livroautocomplete-list div:hover {
+        font-size: clamp(18px, 22px, 24px);
+        font-family: Impact, Arial, sans-serif;
     }
 
     #seta2 {
@@ -219,11 +228,12 @@
     }
 
     #nome-do-livroautocomplete-list div {
-        font: normal 4vw Impact, Arial;
+        font-size: 100%;
     }
 
     #nome-do-livroautocomplete-list div:hover {
-        font: normal 3vw "Swis721 BlkEx BT", Arial;
+        font-size: clamp(14px, 18px, 20px);
+        font-family: Impact, Arial, sans-serif;
     }
 
     #obs4 {
@@ -311,9 +321,20 @@
         min-width: auto;
     }
 
+    #nome-do-livroautocomplete-list div {
+        margin: 1px 0;
+        font-size: 95%;
+    }
+    
     #despenser-livros {
-        width: 36vw;
         margin: auto 21%;
+        height: 50px;
+        width: 125px;
+    }
+
+    .draggable {
+        width: 50px;
+        height: 125px;
     }
 
     .caixa-dropped {
@@ -355,8 +376,9 @@
         margin: 0 9%;
     }
 
-    #despenser-livros {
-        margin: auto 18%;
+    #nome-do-livroautocomplete-list div {
+        font-size: 77%;
+        font-family: Impact, Arial;
     }
 
     .caixa-dropped {
@@ -368,6 +390,34 @@
         height: 100vh;
     }
 }
+
+
+/* Telas com largura até 375px e altura de até 667px */
+@media screen and (max-width: 360px) and (max-height: 640px) {
+    #pagina2 {
+        grid-template-rows: 9vh 29vh 10vh 12vh 8vh 7vh 25vh;
+    }
+
+    #obs2 {
+        line-height: 1rem;
+    }
+
+    #obs3 {
+        line-height: 1rem;
+    }
+
+    #despenser-livros {
+        height: 45px;
+    }
+
+    #obs4 {
+        line-height: 1rem;
+        padding: 2% 0 0 2%;
+    }
+
+}
+
+
 
 /* -----------------------------------------------------------------------------*/
 /* MENSAGEM DE ORIENTAÇÃO LANDSCAPE - Oculta por padrão */

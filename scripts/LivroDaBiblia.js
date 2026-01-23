@@ -10,7 +10,11 @@ class LivroDaBiblia {
     mostraLivro() {
         const livroElementoHTML = document.getElementById("livro")
         document.getElementById("nome-livro").textContent = this.id
-        livroElementoHTML.src = this.src
+        // Força o recarregamento da imagem, mesmo se for o mesmo src
+        livroElementoHTML.src = '';
+        setTimeout(() => {
+            livroElementoHTML.src = this.src + '?t=' + Date.now();
+        }, 10);
         document.getElementById("dica").style.display = "none"
         document.getElementById("dica").src = this.dicaSRC
     }
