@@ -136,13 +136,7 @@ function clicarStart() {
 const livro = document.getElementById("livro")
 livro.addEventListener("click", () => {
   if (gerenciadorDosLivros.verificaSeEstaHabilitado()) {
-    // Scroll para o elemento livro em modo landscape em smartphones
-    if (window.matchMedia("(orientation: landscape) and (max-width: 770px)").matches) {
-      const livroElemento = document.getElementById("livro")
-      if (livroElemento) {
-        livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
-      }
-    }
+
 
     sorteiaLivroDaVez()
     gerenciadorDosLivros.bloqueiaLivroSorteado()
@@ -166,7 +160,7 @@ document.getElementById("botao-despenser-dicas")
     }
   })
 
-let livroCorreto = null
+let livroCorreto = null // Variável global para armazenar o livro correto da vez
 setInterval(() => {
   cronometro.atualizaCronometro()
 }, 1000);
@@ -203,8 +197,8 @@ function sorteiaLivroDaVez() {
     sorteiaLivroDaVez()
   }
   else {
-    livroCorreto = listaDeLivros[numeroAleatorio]
-    listaDeLivros[numeroAleatorio].mostraLivro()
+    livroCorreto = listaDeLivros[numeroAleatorio] // Atualiza a variável global com o livro correto da vez
+    listaDeLivros[numeroAleatorio].mostraLivro() // Mostra o livro sorteado
     pontuacao.passandoParaNovoLivro()
     ultimoNumeroSorteado = numeroAleatorio
     // Desabilita o input quando um novo livro é sorteado
@@ -222,8 +216,8 @@ inputDeResposta.addEventListener('keyup', event => {
 function verificaSeAcertou() {
   const resposta = inputDeResposta.value
   const r = resposta.trim().toLowerCase()
-  if (livroCorreto.isRespostaCerta(resposta)) {
-    listaDeNumerosAleatoriosJaSorteados.push(ultimoNumeroSorteado);
+  if (livroCorreto.isRespostaCerta(resposta)) { // Se a resposta estiver certa
+    listaDeNumerosAleatoriosJaSorteados.push(ultimoNumeroSorteado); // Adiciona o número do livro sorteado à lista de números já sorteados
     document.getElementById("numeros-de-livros-salvos").textContent = listaDeNumerosAleatoriosJaSorteados.join(",")
     inputDeResposta.style.color = "rgb(1, 21, 86)" // cor: azul marinho
     inputDeResposta.style.fontFamily = defineFamiliaFonte(resposta)
@@ -471,8 +465,8 @@ function realizaAcoesDeErro() {
   pontuacao.errandoTestamento()
   document.getElementById("modal-erro").checked = true
   // Recoloca a imagem draggable na div 'despenser-livros'
-  if (livroCorreto && typeof livroCorreto.criaImagemResposta === 'function') {
-    document.getElementById('despenser-livros').innerHTML = livroCorreto.criaImagemResposta();
+  if (livroCorreto && typeof livroCorreto.criaImagemResposta === 'function') { // Verifica se livroCorreto existe e tem a função criaImagemResposta
+    document.getElementById('despenser-livros').innerHTML = livroCorreto.criaImagemResposta(); // Recria a imagem do livro para ser arrastada novamente
   }
   setTimeout(() => {
     document.getElementById("modal-erro").checked = false
@@ -519,15 +513,7 @@ function realizaAcoesDeFimDeJogo() {
 function passaAVez() {
   if (!livroCorreto) return
 
-  // Scroll para o elemento livro em modo landscape em smartphones
-  if (window.matchMedia("(orientation: landscape) and (max-width: 770px)").matches) {
-    const livroElemento = document.getElementById("livro")
-    if (livroElemento) {
-      livroElemento.scrollIntoView({ behavior: 'smooth', block: 'start' })
-    }
-  }
 
-  // Habilita o input quando o livro é clicado
   const inputNomeDoLivro = document.getElementById("nome-do-livro")
   if (inputNomeDoLivro) {
     inputNomeDoLivro.disabled = false

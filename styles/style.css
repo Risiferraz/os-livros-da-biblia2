@@ -723,3 +723,7 @@ h2 {
 #nome-livro {
     display: none;
 }
+
+#landscape-warning {
+    display: none;
+}

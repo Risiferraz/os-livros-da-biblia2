@@ -1,5 +1,19 @@
-/* Tablets e telas médias - telas de 481px até 600px */
+/* 1. TELAS COM LARGURA MENOR QUE 429PX E ALTURA MENOR QUE 701PX - Cor: AZUL*/
+@media screen and (max-width: 428px) and (max-height: 700px) {
+
+    html,
+    body {
+        overflow-y: auto !important;
+        background-color: #667eea;
+    }
+
+}
+
+/* 2. Tablets e telas médias - TELAS DE 481PX ATÉ 600PX */
 @media screen and (max-width: 600px) {
+    body {
+        background-color: #29b430;
+    }
 
     #pagina1 {
         width: 98vw;
@@ -108,9 +122,12 @@
 }
 
 /* --------------------------------------------------*/
-/* Smartphones - telas de 376 a 480px */
+/* 3. Smartphones - TELAS DE 376PX ATÉ 480PX - Cor: AMARELO */
 
 @media screen and (max-width: 480px) {
+    body {
+        background-color: #f8cc06;
+    }
 
     #pagina1 {
         width: 100vw;
@@ -282,8 +299,12 @@
 
 /* #region */
 
-/* Telas muito pequenas - Telas menores que 375px */
+/* 4. Telas muito pequenas - Telas menores que 375px - Cor: VERDE */
 @media screen and (max-width: 375px) {
+    body {
+        background-color: #29b430;
+    }
+
     #pagina1 {
         grid-template-rows: 44% 12% 14% 14% 20%;
     }
@@ -357,8 +378,12 @@
 
 /* #endregion */
 
-/* Telas com largura até 375px e altura de até 667px */
+/* 5. Telas com largura até 375px e altura de até 667px - Cor: VERMELHA */
 @media screen and (max-width: 375px) and (max-height: 667px) {
+    body {
+        background-color: #f80606;
+    }
+
     #pagina2 {
         grid-template-rows: 10vh 29vh 10vh 13vh 9vh 7vh 22vh;
         width: 100vw;
@@ -396,8 +421,12 @@
 }
 
 
-/* Telas com largura até 360px e altura de até 640px */
+/* 6. Telas com largura até 360px e altura de até 640px - Cor: ROXA */
 @media screen and (max-width: 360px) and (max-height: 640px) {
+    body {
+        background-color: #8e44ad;
+    }
+
     #pagina2 {
         grid-template-rows: 9vh 29vh 10vh 12vh 8vh 7vh 25vh;
     }
