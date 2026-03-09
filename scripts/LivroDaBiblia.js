@@ -1,4 +1,4 @@
-class LivroDaBiblia {
+export class LivroDaBiblia {
     constructor(testamento, id, src, dicaSRC, respostaSRC) {
         this.testamento = testamento
         this.id = id
