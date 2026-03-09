@@ -311,9 +311,9 @@ h2 {
     grid-area: 4 / 1 / span 1 / span 1;
     background-image: url("/imagens/dica.png");
     background-size: contain;
-    background-color: #e0c282;
     background-repeat: no-repeat;
     background-position: center;
+    background-color: transparent;
     border: transparent;
     width: 100%;
     height: 100%;
@@ -482,16 +482,8 @@ h2 {
 .caixa-dropped-escolha {
     border: solid 1px #30250b;
     box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    margin: 5%;
     background-color: rgb(182, 114, 13);
-}
-
-.caixa-dropped-hover {
-    border: solid 3px #30250b;
-    box-shadow: rgba(0, 0, 0, 0.8) 5px 5px;
-    margin: 5%;
-    background-color: rgb(125, 75, 0);
-    transform: scale(1.1);
+    transform: scale(1.05);
 }
 
 #at {

@@ -306,10 +306,8 @@ autocomplete(document.getElementById("nome-do-livro"), opcoesParaAutocomplete);
 document.addEventListener("dragstart", event => {
   dragged = event.target;
   setTimeout(() => {
-    event.target.style.opacity = "0";
+    event.target.style.opacity = "0"; // Deixa a imagem transparente durante o arraste
   }, 0);
-  document.getElementById("at").classList.add("caixa-dropped-escolha")
-  document.getElementById("nt").classList.add("caixa-dropped-escolha")
 });
 document.addEventListener("dragend", event => {
   dragged = event.target;
@@ -323,10 +321,17 @@ document.addEventListener("dragleave", event => {
   document.getElementById("nt").classList.remove("caixa-dropped-hover")
 });
 document.addEventListener("dragover", event => {
-  if (event.target.id == "at" || event.target.id == "nt") {
-    document.getElementById(event.target.id).classList.add("caixa-dropped-hover")
+  if (event.target.classList && event.target.classList.contains("caixa-dropped")) {
+    document.getElementById("at").classList.add("caixa-dropped-escolha");
+    document.getElementById("nt").classList.add("caixa-dropped-escolha");
   }
   event.preventDefault();
+});
+
+document.addEventListener("dragleave", event => {
+  if (event.target.classList && event.target.classList.contains("caixa-dropped")) {
+    event.target.classList.remove("caixa-dropped-hover");
+  }
 });
 document.addEventListener("drop", event => {
   // impedir a ação padrão (default) e assim permitir dropagem para elementos dragaveis)
