@@ -4,6 +4,7 @@ const dadosDoJogoFinalizado = jogoFinalizado.pegaDadosDoJogoFinalizado()
 if (!!dadosDoJogoFinalizado) {//se tem dados do jogo finalizado - se não tem = false, se não não tem = true
   jogoFinalizado.vaiParaProximaFase()
 }
+window.passaAVez = passaAVez;
 const cronometro = new Cronometro()
 const pontuacao = new Pontuacao("indicador")
 let listaDeNumerosAleatoriosJaSorteados = []

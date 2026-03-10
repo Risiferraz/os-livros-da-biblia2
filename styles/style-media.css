@@ -136,7 +136,7 @@
 }
 
 /* --------------------------------------------------*/
-/* COR VERDE LIMÃO Smartphones - TELAS DE 385 ATÉ 428PX */
+/* COR AMARELO Smartphones - TELAS DE 385 ATÉ 428PX */
 
 @media screen and (max-width: 428px) {
 
@@ -320,25 +320,29 @@
 }
 
 /* --------------------------------------------------*/
-/* COR VERDE LIMÃO Smartphones - TELAS DE ATÉ 390PX */
+/* COR AZUL CELESTE Smartphones - TELAS DE ATÉ 390PX */
 
 @media screen and (max-width: 390px) {
 
     /* #pagina1 {
-        background-color: #9e4bb8;
+        background-color: #4b71b8;
     }
 
     #pagina2 {
-        background-color: #9e4bb8;
+        background-color: #4b71b8;
     } */
 
     #obs2 {
-        line-height: 1.3rem;
+        line-height: 1.2rem;
     }
 
     #obs3 {
         line-height: 1.2rem;
         padding: 4% 1% 0 2%;
+    }
+
+    h5 {
+        font-size: 9px;
     }
 
     #seta1 {
@@ -349,32 +353,6 @@
 
     #container-dicas {
         margin: 0 5%;
-    }
-
-    #despenser-livros {
-        margin: auto 13%;
-    }
-}
-
-/* --------------------------------------------------*/
-/* COR VERDE LIMÃO Smartphones - TELAS DE ATÉ 390PX */
-
-@media screen and (max-width: 390px) {
-
-    /* #pagina1 {
-        background-color: #4b71b8;
-    }
-
-    #pagina2 {
-        background-color: #4b71b8;
-    } */
-
-    #obs2 {
-        line-height: 1.2rem;
-    }
-
-    h5 {
-        font-size: 9px;
     }
 
     #despenser-livros {
@@ -394,12 +372,31 @@
 }
 
 /* --------------------------------------------------*/
-/* COR VERDE LIMÃO Smartphones - TELAS DE LARGURA ATÉ 360PX E ALTURA DE ATÉ 667PX */
+/* COR VERMELHO Smartphones - TELAS DE LARGURA ATÉ 360PX */
 
-@media screen and (max-width: 360px) and (max-height: 667px) {
+@media screen and (max-width: 360px) {
+/* 
+    #pagina1 {
+        background-color: #f70f0f;
+    }
 
-    /* #pagina1 {
-        background-color: #f7c80f;
+    #pagina2 {
+        background-color: #f70f0f;
+    } */
+
+    #proxima-fase {
+        font-size: 19px;
+    }
+
+}
+
+/* --------------------------------------------------*/
+/* COR LARANJA Smartphones - TELAS DE LARGURA ATÉ 375PX E ALTURA DE ATÉ 667PX */
+
+@media screen and (max-width: 375px) and (max-height: 667px) {
+/* 
+    #pagina1 {
+        background-color: #f7ae0f;
     }
 
     #pagina2 {
@@ -425,6 +422,10 @@
     .caixa-dropped {
         width: 40vw;
         height: 80%;
+    }
+
+    #proxima-fase {
+        font-size: 19px;
     }
 }
 
