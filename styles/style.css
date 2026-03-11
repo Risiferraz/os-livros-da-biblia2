@@ -584,7 +584,7 @@ h2 {
 }
 
 #mensagem-final {
-    width: 75%;
+    width: 77%;
     display: none;
     position: absolute;
     left: 50%;
@@ -596,7 +596,7 @@ h2 {
 }
 
 #img-mensagem-final {
-    grid-area: 1 / 1 / span 2 / span 2;
+    grid-area: 1 / 1 / span 4 / span 2;
     width: 100%;
 }
 

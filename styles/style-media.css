@@ -61,7 +61,7 @@
 }
 
 /* --------------------------------------------------*/
-/* COR MARROM Smartphones - TELAS DE ATÉ 570PX */
+/* COR MARROM Smartphones - TELAS DE 429 ATÉ 570PX */
 @media screen and (max-width: 570px) {
     /* body {
         background-color: #320e08;
@@ -129,14 +129,18 @@
         width: 75%;
         max-height: 75px;
         padding: 3%;
-        font-size: 24px;
+        font-size: 4vw;
         font-family: Impact, 'Arial Narrow Bold', sans-serif;
+    }
+
+    h5 {
+        font-size: 1.8vw;
     }
 
 }
 
 /* --------------------------------------------------*/
-/* COR AMARELO Smartphones - TELAS DE 385 ATÉ 428PX */
+/* COR AMARELO Smartphones - TELAS DE 391 ATÉ 428PX */
 
 @media screen and (max-width: 428px) {
 
@@ -320,7 +324,7 @@
 }
 
 /* --------------------------------------------------*/
-/* COR AZUL CELESTE Smartphones - TELAS DE ATÉ 390PX */
+/* COR AZUL CELESTE Smartphones - TELAS DE 361 ATÉ 390PX */
 
 @media screen and (max-width: 390px) {
 
@@ -375,7 +379,7 @@
 /* COR VERMELHO Smartphones - TELAS DE LARGURA ATÉ 360PX */
 
 @media screen and (max-width: 360px) {
-/* 
+    /* 
     #pagina1 {
         background-color: #f70f0f;
     }
@@ -394,7 +398,7 @@
 /* COR LARANJA Smartphones - TELAS DE LARGURA ATÉ 375PX E ALTURA DE ATÉ 667PX */
 
 @media screen and (max-width: 375px) and (max-height: 667px) {
-/* 
+    /* 
     #pagina1 {
         background-color: #f7ae0f;
     }
@@ -432,7 +436,7 @@
 /* --------------------------------------------------*/
 /* LANDSCAPE LARGURA DE ATÉ 954 E ALTURA DE ATÉ 599PX */
 
-@media screen and (orientation: landscape) and (max-width: 954px) and (max-height: 599px) {
+@media screen and (orientation: landscape) {
 
     #landscape-warning {
         display: flex !important;
