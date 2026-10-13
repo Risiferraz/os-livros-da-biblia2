@@ -436,7 +436,7 @@
 /* --------------------------------------------------*/
 /* LANDSCAPE LARGURA DE ATÉ 954 E ALTURA DE ATÉ 599PX */
 
-@media screen and (orientation: landscape) {
+@media screen and (orientation: landscape) and (max-width: 954px) {
 
     #landscape-warning {
         display: flex !important;
